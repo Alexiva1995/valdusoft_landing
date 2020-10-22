@@ -1,6 +1,6 @@
 <div class="ui menu bg-transparent off-border-shadows pc">
     <div class="ui container mt-3">
-        <div class="item">
+        <div class="item" style="width: 40%">
             <img src="{{asset('assets/img/sistema/Logo.png')}}" class="img-logo">
         </div>
         <div class="right menu">
