@@ -36,12 +36,25 @@
     color: #3bbce8 !important;
 }
 
+.text-services{
+color: #3bbce8 !important;
+font-size: 45px;
+}
+.text-services-two{
+    color: #36334c;
+    font-weight: bold;
+}
 .text-gray-dark{
     color: #36334c
 }
 
 .text-purple-dark{
     color: #650865 !important;
+}
+
+.text-aliados{
+    color: #650865 !important;
+    font-size: 45px;
 }
 
 .ui.menu .item::before{
@@ -232,7 +245,7 @@ a.item:hover span{
 
 .tab_aliado .menu .item span{
     margin-left: 20px !important;
-    
+
 }
 
 .tab_aliado .header_tap{

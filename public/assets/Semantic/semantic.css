@@ -23718,6 +23718,7 @@ ol.ui.horizontal.list li:before,
   transition: background 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
   transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
   transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
+  border-radius: 20px;
 }
 
 .ui.menu > .item:first-child {
@@ -24065,14 +24066,24 @@ ol.ui.horizontal.list li:before,
       Hover
 ---------------*/
 
-.ui.link.menu .item:hover,
+/*.ui.link.menu .item:hover,
 .ui.menu .dropdown.item:hover,
 .ui.menu .link.item:hover,
 .ui.menu a.item:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.03);
   color: rgba(0, 0, 0, 0.95);
-}
+}*/
+
+
+.ui.link.menu .item:hover,
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover {
+  cursor: pointer;
+  transition: all 1s;
+  background: #650865 !important;
+}  
 
 /*--------------
      Pressed

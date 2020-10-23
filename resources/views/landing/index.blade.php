@@ -9,12 +9,12 @@
 
     <div class="ui container center-center text-whiye">
         <div class="ui center aligned segment bg-transparent text-white off-border-shadows">
-            <h2><strong class="f-900">Lo que imaginas es posible!</strong></h2>
-            <h1><strong class="f-900">Es el momento ideal <br> para tu desarrollo web</strong></h1>
-            <button class="big ui button btn-rounder hover-one text-white bg-purple-dark transition-08s w-alt" onclick="moveSection('#contactanos')">
+                <h2><strong class="f-900">隆LO QUE IMAGINAS ES POSIBLE!</strong></h2>
+                <h1><strong class="f-900">Es el momento ideal para <br> tu desarrollo web</strong></h1>
+            <button onclick="location.href = 'https://wa.me/584269315724?text=Quiero%20comenzar%20a%20desarrollar%20';" class="big ui button btn-rounder hover-one text-white bg-purple-dark transition-08s w-alt">
                 Comienza Ahora
             </button>
-            <button class="big ui button btn-rounder hover-two text-white bg-transparent border-blue transition-08s w-alt" onclick="moveSection('#servicios')">
+            <button class="big ui button btn-rounder hover-two text-white bg-transparent border-blue transition-08s w-alt" onclick="moveSection('#portafolio')">
                 Cónocenos
             </button>
         </div>
@@ -24,12 +24,12 @@
 {{-- Nuestros Servicios --}}
 @include('landing.componentes.nuestrosServicios')
 {{-- Fin Nuestros Servicios --}}
-{{-- Nuestros Trabajos --}}
-@include('landing.componentes.nuestrosTrabajos')
-{{-- Fin Nuestros Trabajos --}}
 {{-- Nuestros Aliados --}}
 @include('landing.componentes.nuestrosAliados')
 {{-- Fin Nuestros Aliados --}}
+{{-- Nuestros Trabajos --}}
+@include('landing.componentes.nuestrosTrabajos')
+{{-- Fin Nuestros Trabajos --}}
 {{-- Miembre de nuestra empresa --}}
 @include('landing.componentes.miembroEmpresa')
 {{-- Miembre de nuestra empresa --}}

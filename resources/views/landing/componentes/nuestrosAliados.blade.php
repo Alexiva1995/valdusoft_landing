@@ -14,8 +14,8 @@
 
 <div id="aliados" class="p-start-end">
     <div class="ui container mt-5">
-        <h3 class="text-purple-dark">Aliados</h3>
-        <h2><strong>Ésto son nuestros aliados y clientes</strong></h2>
+        <h3 class="text-aliados">Aliados</h3>
+        <h2><strong>Éstos son nuestros aliados y clientes</strong></h2>
     </div>
     
     <div class="ui grid tab_aliado">

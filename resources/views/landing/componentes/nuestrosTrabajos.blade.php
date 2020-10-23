@@ -1,6 +1,6 @@
 <div id="portafolio" class="p-start-end">
     <div class="ui container mt-5">
-        <h3 class="text-purple-dark">Portafolio</h3>
+        <h3 class="text-aliados">Portafolio</h3>
         {{-- Menu Grande --}}
         <div class="ui menu off-border-shadows pc">
             <div class="ui container">

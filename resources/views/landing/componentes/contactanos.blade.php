@@ -63,20 +63,25 @@
         </div>
     </div>
     <div class="ui stackable grid">
-        <div class="eight wide column icons">
+        <div class="four wide column icons">
             <div class="ui container">
                 <div class="ui left aligned basic segment">
+                        <a href="" target="_blank" class="btn"><i class="facebook f icon text-white"></i></a>
                     <h1>
-                        <i class="facebook f icon text-white"></i>
-                        <i class="instagram icon text-white"></i>
-                        <i class="twitter icon text-white"></i>
+                        <a href="https://www.facebook.com/" target="_blank" class="btn"><i class="facebook f icon text-white"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="btn"><i class="instagram icon text-white"></i></a>
                     </h1>
                 </div>
             </div>
         </div>
         <div class="eight wide column">
+            <div class="ui center aligned basic segment">
+                <h3 class="text-white">&copy; 2020 Valdusoft All rights reserved</h3>
+            </div>
+        </div>
+        <div class="four wide column">
             <div class="ui right aligned basic segment">
-                <img src="{{asset('assets/img/sistema/logo blancologo.png')}}" class="img-logo">
+                <img src="{{asset('assets/img/sistema/Logo.png')}}" class="img-logo">
             </div>
         </div>
     </div>
