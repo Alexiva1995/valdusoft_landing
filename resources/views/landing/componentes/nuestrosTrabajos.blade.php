@@ -53,30 +53,30 @@
     </div>
     <div class="ui grid">
         <div class="doubling four column row portafolio">
+            @foreach($projects as $project)
             <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
+                <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
+                <div class="container card-works">
+                        <div class="overlay">
+                          <div class = "items"></div>
+                          <div class = "items company">
+                                <p>VALDU<strong>SOFT</strong></p>
+                              </div>
+                          <div class = "items head">
+                            <p>{{$project->name}}</p>
+                          </div>
+                          <div class = "items category">
+                                <p>{{$project->tag->name}}</p>
+                          </div>
+
+                      </div>
+                </div>
             </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
-            <div class="column">
-                <img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">
-            </div>
+            @endforeach
           </div>
+          <div class="ui center aligned container">
+                <button class="large ui inverted blue button">Ver más</button>
+          </div>
+
     </div>
 </div>

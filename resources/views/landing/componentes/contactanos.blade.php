@@ -66,7 +66,6 @@
         <div class="four wide column icons">
             <div class="ui container">
                 <div class="ui left aligned basic segment">
-                        <a href="" target="_blank" class="btn"><i class="facebook f icon text-white"></i></a>
                     <h1>
                         <a href="https://www.facebook.com/" target="_blank" class="btn"><i class="facebook f icon text-white"></i></a>
                         <a href="https://www.instagram.com/" target="_blank" class="btn"><i class="instagram icon text-white"></i></a>
@@ -85,5 +84,5 @@
             </div>
         </div>
     </div>
-    
+
 </div>

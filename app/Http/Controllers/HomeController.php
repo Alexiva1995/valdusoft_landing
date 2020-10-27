@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Ally;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        /*$this->middleware('auth');*/
     }
 
     /**
@@ -25,4 +27,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function landing()
+    {
+        $projects = Project::orderByRaw('RAND()')->take(8)->get();
+        $allies = Ally::take(5)->get();
+
+        return view('landing.index', compact('projects','allies'));
+    }
+
 }

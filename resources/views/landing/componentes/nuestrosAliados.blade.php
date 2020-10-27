@@ -1,6 +1,6 @@
 
 @php
-    for ($i=0; $i < 5; $i++) { 
+    for ($i=0; $i < 5; $i++) {
         $data [] = [
             'img' => asset('assets/img/sistema/Grupo-106.png'),
             'imgC' => asset('assets/img/sistema/Logo-2.png'),
@@ -17,7 +17,7 @@
         <h3 class="text-aliados">Aliados</h3>
         <h2><strong>Éstos son nuestros aliados y clientes</strong></h2>
     </div>
-    
+
     <div class="ui grid tab_aliado">
 
         <div class="four wide column">
@@ -32,7 +32,7 @@
                         <small class="">{{$item['meta']}}</small>
                     </h5>
                 </span>
-                
+
               </a>
               @endforeach
           </div>

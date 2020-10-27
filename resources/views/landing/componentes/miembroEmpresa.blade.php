@@ -1,7 +1,7 @@
 <div class="fondo2 p-start-end" style="background: url('{{asset('assets/img/sistema/Recurso-2logo.png')}}')" id="equipo">
     <div class="ui container mt-5">
         <div class="ui center aligned segment off-border-shadows">
-            <h4 class="text-blue-light"><strong>MIEMBROS DE NUETRA EMPRESA</strong></h4>
+            <h2 class="text-services"><strong>Miembros de nuestra empresa</strong></h2>
             <h2 class="text-gray-dark"><strong>Conoce a nuestro equipo</strong></h2>
         </div>
         <div class="ui grid">

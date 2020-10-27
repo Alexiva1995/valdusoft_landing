@@ -408,3 +408,65 @@ a.item:hover span{
     height: 60px;
     width: 230px !important;
 }
+
+
+
+/*CARD OVER*/
+.card-works {
+    max-width: 100%;
+    top:0; right: 0; left: 0; bottom: 0;
+    margin: 0px 0px 5px 0px;
+    background: url('/assets/img/sistema/Logo-1.png');
+    background-color: #3bbce8;
+    background-size: cover;
+    cursor: pointer;
+    }
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 2fr 1fr 2fr;
+
+  background: rgba(36, 39, 86, 1);
+  color: #FEF5DF;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.company {
+    font-size: 50px;
+    line-height: 20px;
+
+    transform: translateY(40px);
+    transition: all 0.7s;
+   text-align: center;
+   color: #650865;
+  }
+
+.head {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+
+  transform: translateY(40px);
+  transition: all 0.7s;
+ text-align: center;
+}
+
+.category {
+    font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+
+  transform: translateY(40px);
+  transition: all 0.7s;
+ text-align: center;
+ color: #3bbce8;
+  }
+.container:hover .overlay {
+  opacity: 1;
+}
+
+
+
