@@ -16,7 +16,7 @@ class CreateAlliesTable extends Migration
         Schema::create('allies', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('logo');
             $table->timestamps();
         });

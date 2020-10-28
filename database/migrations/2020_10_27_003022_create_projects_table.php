@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('link');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->unsignedbigInteger('ally_id');
             $table->unsignedbigInteger('tag_id');
             $table->timestamps();

@@ -469,4 +469,17 @@ a.item:hover span{
 }
 
 
+.ui.link.menu .item:hover,
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover {
+  cursor: pointer;
+  transition: all 1s;
+  background: #650865 !important;
+}
 
+.btn-social i:hover {
+    cursor: pointer;
+    transition: all 1s;
+    color: #650865 !important;
+  }

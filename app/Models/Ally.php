@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ally extends Model
 {
     protected $fillable = [
-        'name', 'logo',
+        'name', 'description','logo',
     ];
 
     public function projects()
