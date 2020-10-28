@@ -483,3 +483,6 @@ a.item:hover span{
     transition: all 1s;
     color: #650865 !important;
   }
+  div#aliados, .twelve.wide.stretched.column {
+    background: #f5f4f4;
+    }
