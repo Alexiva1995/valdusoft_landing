@@ -33,26 +33,40 @@
                 </div>
                 <div class="ten wide column">
                     <div class="ui basic segment">
-                        <form class="ui form">
+                    @if(Session::has('success'))
+                    <div class="ui blue message">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        {{ Session::get('success') }}
+                    </div>
+                    </div>                   
+                    @endif
+                        <form class="ui form" method="POST" action="{{ route ('contact')}}">
+                            @csrf
                             <div class="equal width fields">
                                 <div class="field">
-                                    <input class="placeholder-color" type="text" placeholder="Nombre">
+                                    <input name="name" class="placeholder-color" type="text" placeholder="Nombre" value="{{ old('name')}}" >
+                                    {!! $errors->first('name', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                                 <div class="field">
-                                    <input class="placeholder-color" type="email" placeholder="Email">
+                                    <input name="email" class="placeholder-color" type="email" placeholder="Email" value="{{ old('email')}}" >
+                                    {!! $errors->first('email', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
                             <div class="equal width fields">
                                 <div class="field">
-                                    <input class="placeholder-color" type="text" placeholder="Asunto">
+                                    <input name="subject" class="placeholder-color" type="text" placeholder="Asunto" value="{{ old('subject')}}" >
+                                    {!! $errors->first('subject', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                                 <div class="field">
-                                    <input class="placeholder-color" type="text" placeholder="Teléfono">
+                                    <input name="phone" class="placeholder-color" type="text" placeholder="Teléfono" value="{{ old('phone')}}" >
+                                    {!! $errors->first('phone', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
                             <div class="equal width fields">
                                 <div class="field">
-                                    <textarea class="placeholder-color" rows="2" placeholder="Mensaje"></textarea>
+                                    <textarea name="message" class="placeholder-color" rows="2" placeholder="Mensaje">{{ old('message')}}</textarea>
+                                    {!! $errors->first('message', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
                             <button class="ui btn-rounder right floated button bg-blue-light text-white" type="submit">Contáctanos</button>

@@ -19,17 +19,20 @@
     </div>
 
     <div class="ui grid tab_aliado">
-
         <div class="four wide column">
           <div class="ui vertical fluid tabular menu">
-              @foreach ($data as $item)
-              <a class="item @if($item['datatap'] == 'tab0') active @endif" data-tab="{{$item['datatap']}}">
-                <img class="ui middle aligned mini circular image" src="{{$item['img']}}">
+              @foreach ($allies as $ally)
+              <a class="item @if('tab'.$ally->id == 'tab1') active @endif" data-tab="{{'tab'.$ally->id}}">
+                <img class="ui middle aligned mini circular image" src="{{asset('assets/img/sistema/Grupo-106.png')}}">
                 <span>
                     <h5 class="">
-                        {{$item['title']}}
+                        {{$ally->name}}
                         <br>
-                        <small class="">{{$item['meta']}}</small>
+                        @if($ally->description == null)
+                        <small class="">Lorem ipsum dolor sit amet consec</small>
+                        @else
+                        <small class="">{{$ally->description}}</small>
+                        @endif
                     </h5>
                 </span>
 
@@ -37,14 +40,18 @@
               @endforeach
           </div>
         </div>
-        <div class="twelve wide stretched column">
-            @foreach ($data as $item)
-            <div class="ui bottom attached tab segment @if($item['datatap'] == 'tab0') active @endif" data-tab="{{$item['datatap']}}">
+         <div class="twelve wide stretched column">
+            @foreach ($allies as $ally)
+            <div class="ui bottom attached tab segment @if('tab'.$ally->id == 'tab1') active @endif" data-tab="{{'tab'.$ally->id}}">
                 <div class="header_tap">
-                    <img class="ui middle aligned tiny circular image" src="{{$item['img']}}">
-                    <h2 class="ui header text-purple-dark">{{$item['title']}}</h2>
+                    <img class="ui middle aligned tiny circular image" src="{{asset('assets/img/sistema/Grupo-106.png')}}">
+                    <h2 class="ui header text-purple-dark">{{$ally->name}}</h2>
                 </div>
-                <p>{{$item['content']}}</p>
+                @if($ally->description == null)
+                <p>Lorem ipsum dolor sit amet consec</p>
+                @else
+                <p>{{$ally->description}}</p>
+                @endif
                 <div class="relative">
                     {{-- boton derecho --}}
                     <button class="btn-carrusel-aliado btn-left">
@@ -52,17 +59,19 @@
                     </button>
                     {{-- carrusel --}}
                     <div class="aliados">
-                        @for ($i = 0; $i < 10; $i++)
+                        @if(!empty($allies->projects))
+                        @foreach($allies->projects as $project)
                         <div class="relative">
-                            <img class="ui image" src="{{$item['imgC']}}" alt="">
+                            <img class="ui image" src="{{asset('assets/img/sistema/Logo-2.png')}}" alt="">
                             <div class="info">
                                 <div>
-                                    <h2 class="ui header text-white">{{$item['title']}} - {{$i}}</h2>
-                                    <a href="http://" class="text-white">Visitar</a>
+                                    <h2 class="ui header text-white">{{$project->name}} - {{$i}}</h2>
+                                    <a href="{{$project->link}}" class="text-white">Visitar</a>
                                 </div>
                             </div>
                         </div>
-                        @endfor
+                        @endforeach
+                        @endif
                     </div>
                     <button class="btn-carrusel-aliado btn-right">
                         <i class="angle right icon"></i>
@@ -72,5 +81,5 @@
             </div>
             @endforeach
         </div>
-      </div>
+    </div>
 </div>
