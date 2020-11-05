@@ -486,3 +486,16 @@ a.item:hover span{
   div#aliados, .twelve.wide.stretched.column {
     background: #f5f4f4;
     }
+    a.item:hover div {
+        transition: all 0.6s;
+        background: #650865 !important;
+        padding: 10px;
+        color: #ffffff;
+        border-radius: 20px;
+        }
+
+.ui.link.menu .item:hover, .ui.menu .dropdown.item:hover, .ui.menu .link.item:hover, .ui.menu a.item:hover {
+cursor: pointer;
+transition: all 1s;
+background: transparent !important;
+}

@@ -22,26 +22,29 @@
         <div class="four wide column">
           <div class="ui vertical fluid tabular menu">
               @foreach ($allies as $ally)
+              @if(!($ally->projects)->isEmpty())
               <a class="item @if('tab'.$ally->id == 'tab1') active @endif" data-tab="{{'tab'.$ally->id}}">
-                <img class="ui middle aligned mini circular image" src="{{asset('assets/img/sistema/Grupo-106.png')}}">
-                <span>
-                    <h5 class="">
-                        {{$ally->name}}
-                        <br>
-                        @if($ally->description == null)
-                        <small class="">Lorem ipsum dolor sit amet consec</small>
-                        @else
-                        <small class="">{{$ally->description}}</small>
-                        @endif
-                    </h5>
-                </span>
+                    <img class="ui middle aligned mini circular image" src="{{asset('assets/img/sistema/Grupo-106.png')}}">
+                    <span>
+                        <h5 class="">
+                            {{$ally->name}}
+                            <br>
+                            @if($ally->description == null)
+                            <small class="">Lorem ipsum dolor sit amet consec</small>
+                            @else
+                            <small class="">{{$ally->description}}</small>
+                            @endif
+                        </h5>
+                    </span>
 
-              </a>
+                  </a>
+              @endif
               @endforeach
           </div>
         </div>
          <div class="twelve wide stretched column">
             @foreach ($allies as $ally)
+            @if(!($ally->projects)->isEmpty())
             <div class="ui bottom attached tab segment @if('tab'.$ally->id == 'tab1') active @endif" data-tab="{{'tab'.$ally->id}}">
                 <div class="header_tap">
                     <img class="ui middle aligned tiny circular image" src="{{asset('assets/img/sistema/Grupo-106.png')}}">
@@ -58,27 +61,29 @@
                         <i class="angle left icon"></i>
                     </button>
                     {{-- carrusel --}}
+                    @foreach($ally->projects as $project)
                     <div class="aliados">
-                        @if(!empty($allies->projects))
-                        @foreach($allies->projects as $project)
-                        <div class="relative">
-                            <img class="ui image" src="{{asset('assets/img/sistema/Logo-2.png')}}" alt="">
-                            <div class="info">
-                                <div>
-                                    <h2 class="ui header text-white">{{$project->name}} - {{$i}}</h2>
-                                    <a href="{{$project->link}}" class="text-white">Visitar</a>
+                            <div class="relative">
+                                <img class="ui image" src="{{asset('assets/img/sistema/Logo-2.png')}}" alt="">
+                                <div class="info">
+                                    <div>
+                                        <h2 class="ui header text-white">{{$project->name}} - {{$i}}</h2>
+                                        <a href="{{$project->link}}" class="text-white">Visitar</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-                        @endif
-                    </div>
+
+
+                    @endforeach
                     <button class="btn-carrusel-aliado btn-right">
                         <i class="angle right icon"></i>
                     </button>
+
                     {{-- boton izquierdo --}}
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </div>

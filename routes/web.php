@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 
     return view('landing.index');
 });*/
-Route::get('/', 'HomeController@landing')->name('landing');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@landing')->name('landing');
 Route::post('/contact', 'HomeController@contactUs')->name('contact');
