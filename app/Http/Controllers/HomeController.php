@@ -33,7 +33,6 @@ class HomeController extends Controller
     {
         $projects = Project::orderByRaw('RAND()')->take(8)->get();
         $allies = Ally::with('projects')->take(5)->get();
-      //  dd($allies);
         return view('landing.index', compact('projects','allies'));
     }
 

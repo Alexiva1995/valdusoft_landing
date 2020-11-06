@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(AllySeeder::class);
+        $this->call(AllyTableSeeder::class);
+        // $this->call(AllySeeder::class);
         $this->call(TagSeeder::class);
         $this->call(ProyectSeeder::class);
     }

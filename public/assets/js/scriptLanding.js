@@ -3,7 +3,9 @@ $(document).ready(function () {
     $('.ui.dropdown').dropdown();
     // inicializar tabulares
     $('.menu .item').tab()
-    carruselAliados()
+    // setInterval(() => {
+        carruselAliados()
+    // }, 2000);
 });
 
 /**
@@ -30,6 +32,7 @@ function carruselAliados() {
         prevArrow: '.btn-carrusel-aliado.btn-left',
         nextArrow: '.btn-carrusel-aliado.btn-right',
         slidesToShow: 4,
+        adaptiveHeight: true,
         slidesToScroll: 4,
         responsive: [{
                 breakpoint: 1024,
