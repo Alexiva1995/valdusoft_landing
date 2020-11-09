@@ -8,21 +8,14 @@
                     <h2><strong>Este es nuestro trabajo</strong></h2>
                 </div>
                 <div class="right menu">
-                    <a class="item">
-                        <span>Todos</span>
-                    </a>
-                    <a class="item">
-                        <span>Apps</span>
-                    </a>
-                    <a class="item">
-                        <span>Diseño Web</span>
-                    </a>
-                    <a class="item">
-                        <span>Desarrollo Web</span>
-                    </a>
-                    <a class="item">
-                        <span>Diseño Gráfico</span>
-                    </a>
+                        <a class="item">
+                                <span>Todos</span>
+                        </a>
+                    @foreach ($tags as $tag)
+                        <a class="item">
+                            <span>{{$tag->name}}</span>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -32,21 +25,14 @@
                 <h2><strong>Este es nuestro trabajo</strong></h2>
                 <i class="dropdown icon"></i>
                 <div class="menu ">
-                    <a class="item text-center">
-                        <span>Todos</span>
-                    </a>
-                    <a class="item text-center">
-                        <span>Apps</span>
-                    </a>
-                    <a class="item text-center">
-                        <span>Diseño Web</span>
-                    </a>
-                    <a class="item text-center">
-                        <span>Desarrollo Web</span>
-                    </a>
-                    <a class="item text-center">
-                        <span>Diseño Gráfico</span>
-                    </a>
+                        <a class="item text-center">
+                                <span>Todos</span>
+                        </a>
+                    @foreach ($tags as $tag)
+                        <a class="item text-center">
+                            <span>{{$tag->name}}</span>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>

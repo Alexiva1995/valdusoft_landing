@@ -15,9 +15,9 @@
 @endphp
 
 <style>
-    .relative.slick-slide.slick-current.slick-active{
+  /*  .relative.slick-slide.slick-current.slick-active{
         width: 219px !important;
-    }
+    }*/
 </style>
 
 <div id="aliados" class="p-start-end">
@@ -77,12 +77,13 @@
                     {{-- carrusel --}}
                     <div class="aliados">
                     @foreach($ally->projects as $project)
+
                             <div class="relative">
                                 <img class="ui image" src="{{asset('assets/img/sistema/Logo-2.png')}}" alt="">
                                 <div class="info">
                                     <div>
                                         <h2 class="ui header text-white">{{$project->name}}</h2>
-                                        <a href="{{$project->link}}" class="text-white">Visitar</a>
+                                    <a href="{{$project->link}}" class="text-white">Visitar</a>
                                     </div>
                                 </div>
                             </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Ally;
 use App\Models\Contact;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MessageReceived;
 class HomeController extends Controller
@@ -31,13 +32,15 @@ class HomeController extends Controller
     }
     public function landing()
     {
+        $tags = Tag::all();
         $projects = Project::orderByRaw('RAND()')->take(8)->get();
-        $allies = Ally::with('projects')->take(5)->get();
-        return view('landing.index', compact('projects','allies'));
+        $allies = Ally::with('projects')->take(7)->get();
+        return view('landing.index', compact('projects','allies', 'tags'));
     }
 
     public function contactUs(Request $request)
     {
+       // return $request->all();
         $msg = request()->validate([
             'name' => 'required',
             'email' => 'required|email',

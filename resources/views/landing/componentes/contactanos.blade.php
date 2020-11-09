@@ -39,7 +39,7 @@
                     <div class="header">
                         {{ Session::get('success') }}
                     </div>
-                    </div>                   
+                    </div>
                     @endif
                         <form class="ui form" method="POST" action="{{ route ('contact')}}">
                             @csrf
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="ui stackable grid">
+    <div class="ui middle aligned grid">
         <div class="four wide column icons">
             <div class="ui container">
                 <div class="ui left aligned basic segment">
