@@ -475,9 +475,6 @@ a.item:hover span{
     transition: all 1s;
     color: #650865 !important;
   }
-  div#aliados, .twelve.wide.stretched.column {
-    background: #f5f4f4;
-    }
     a.item:hover div {
         transition: all 0.6s;
         background: #650865 !important;
@@ -491,3 +488,13 @@ a.item:hover span{
             background: transparent;
             border-radius: 20px;
             }
+.ui.tabular.menu .item {
+border: 0px!important;
+}
+.ui.tabular.menu {
+border-bottom: 0px!important;
+}
+
+.ui.attached.segment{
+    border: 0px!important;
+}
