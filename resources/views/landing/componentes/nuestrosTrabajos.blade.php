@@ -41,7 +41,7 @@
     <div class="ui bottom attached tab segment active" data-tab="todos">
      <div class="ui grid">
         <div class="doubling four column row portafolio">
-            @foreach($projects as $project)
+            @foreach($projects_all as $project)
             <div class="column">
                 <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
                 <div class="container card-works">
@@ -68,88 +68,29 @@
         <div class="ui bottom attached tab segment" data-tab="item-{{$tag->id}}">
               <div class="ui grid">
                 <div class="doubling four column row portafolio">
-                    @foreach($projects as $project)
-                    @if($project->tag->name == 'Apps' && $tag->name == 'Apps' )
-                         <div class="column">
-                        <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
-                        <div class="container card-works">
-                                <div class="overlay">
-                                <div class = "items"></div>
-                                <div class = "items company">
-                                        <p>VALDU<strong>SOFT</strong></p>
-                                    </div>
-                                <div class = "items head">
-                                    <p>{{$project->name}}</p>
-                                </div>
-                                <div class = "items category">
-                                        <p>{{$project->tag->name}}</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    @if($tag->name == 'Apps' )
+                    @foreach($projects->where('tag_id', 1)->take(8) as $project)
+                        @include('landing.componentes.partials.section_project_tab')
+                     @endforeach
                     @endif
-                    @if($project->tag->name == 'Diseño Web' && $tag->name == 'Diseño Web' )
-                         <div class="column">
-                        <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
-                        <div class="container card-works">
-                                <div class="overlay">
-                                <div class = "items"></div>
-                                <div class = "items company">
-                                        <p>VALDU<strong>SOFT</strong></p>
-                                    </div>
-                                <div class = "items head">
-                                    <p>{{$project->name}}</p>
-                                </div>
-                                <div class = "items category">
-                                        <p>{{$project->tag->name}}</p>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
+                    @if($tag->name == 'Diseño Web' )
+                         @foreach($projects->where('tag_id', 2)->take(8) as $project)
+                             @include('landing.componentes.partials.section_project_tab')
+                        @endforeach
                     @endif
-                     @if($project->tag->name == 'Desarrollo Web' && $tag->name == 'Desarrollo Web' )
-                         <div class="column">
-                        <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
-                        <div class="container card-works">
-                                <div class="overlay">
-                                <div class = "items"></div>
-                                <div class = "items company">
-                                        <p>VALDU<strong>SOFT</strong></p>
-                                    </div>
-                                <div class = "items head">
-                                    <p>{{$project->name}}</p>
-                                </div>
-                                <div class = "items category">
-                                        <p>{{$project->tag->name}}</p>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
+                     @if($tag->name == 'Desarrollo Web' )
+                            @foreach($projects->where('tag_id',3)->random(8) as $project)
+                             @include('landing.componentes.partials.section_project_tab')
+                            @endforeach
                     @endif
-                    @if($project->tag->name == 'Diseño gráfico' && $tag->name == 'Diseño gráfico' )
-                         <div class="column">
-                        <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
-                        <div class="container card-works">
-                                <div class="overlay">
-                                <div class = "items"></div>
-                                <div class = "items company">
-                                        <p>VALDU<strong>SOFT</strong></p>
-                                    </div>
-                                <div class = "items head">
-                                    <p>{{$project->name}}</p>
-                                </div>
-                                <div class = "items category">
-                                        <p>{{$project->tag->name}}</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    
+                    @if($tag->name == 'Diseño Gráfico' )
+                         @foreach($projects->where('tag_id',4)->take(8) as $project)
+                             @include('landing.componentes.partials.section_project_tab')
+                         @endforeach
                     @endif
-                    @endforeach
                 </div>
             </div>
         </div>

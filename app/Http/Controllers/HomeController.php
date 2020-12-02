@@ -33,11 +33,11 @@ class HomeController extends Controller
     public function landing()
     {
         $tags = Tag::all();
-        $projects = Project::orderByRaw('RAND()')->take(8)->get();
+        $projects_all = Project::orderByRaw('RAND()')->take(8)->get();
+        $projects = Project::with('tag')->get();
         $allies = Ally::with('projects')->take(7)->get();
-        return view('landing.index', compact('projects','allies', 'tags'));
+        return view('landing.index', compact('projects','projects_all','allies', 'tags'));
     }
-
     public function contactUs(Request $request)
     {
        // return $request->all();
