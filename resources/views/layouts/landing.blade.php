@@ -10,5 +10,7 @@
 <body>
     @yield('content')
     @include('layouts.componentesLanding.scripts')
+    <script src="https://unpkg.com/axios@0.20.0-0/dist/axios.min.js"></script>
+    @yield('scripts')
 </body>
 </html>

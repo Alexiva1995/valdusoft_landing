@@ -111,7 +111,7 @@ class ProyectSeeder extends Seeder
             'tag_id' => 3,
         ]);
         DB::table('projects')->insert([
-            'name' => 'Unión Capital',
+            'name' => 'Uni贸n Capital',
             'link' => 'https://mioficina.unioncapital.eu/',
             'description' => null,
             'ally_id' => 6,

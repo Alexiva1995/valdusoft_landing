@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(AllySeeder::class);
         $this->call(TagSeeder::class);
         $this->call(ProyectSeeder::class);
+        $this->call(MemberSeeder::class);
     }
 }

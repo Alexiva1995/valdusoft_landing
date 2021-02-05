@@ -13,8 +13,8 @@ class AllySeeder extends Seeder
     public function run()
     {
         DB::table('allies')->insert([
-            'name' => 'Índigo marketing',
-            'description' => 'Agencia de Marketing en Córdoba',
+            'name' => '脥ndigo marketing',
+            'description' => 'Agencia de Marketing en C贸rdoba',
             'logo' => 'Grupo-106.png',
         ]);
         DB::table('allies')->insert([

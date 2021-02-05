@@ -7,3 +7,4 @@
 <script src="{{asset('assets/Slick/slick/slick.min.js')}}"></script>
 {{-- Custom JS --}}
 <script src="{{asset('assets/js/scriptLanding.js')}}"></script>
+<script src="{{asset('assets/js/scriptcarouselmembers.js')}}"></script>

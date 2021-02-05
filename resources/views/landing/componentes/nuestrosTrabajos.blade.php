@@ -44,21 +44,32 @@
             @foreach($projects_all as $project)
             <div class="column">
                 <!--<img src="{{asset('assets/img/sistema/Logo-1.png')}}" alt="">-->
-                <div class="container card-works">
-                        <div class="overlay">
+                <div class="container card-works" 
+                      style="background: url('assets/img/projects-porta/{{$project->porta_image}}');
+                                background-color: #3bbce8;
+                                
+                                background-size: cover;">
+                        <div class="overlay" data-target="#image-modal" data-toggle="modal" onclick="showProject( {{ $project->id }} )">
                           <div class = "items"></div>
-                          <div class = "items company">
-                                <p>VALDU<strong>SOFT</strong></p>
-                              </div>
+                           <div class = "items company">
+                                <img class="ui middle aligned tiny circular image " src="assets/img/allys-logo/circular/{{$project->ally->logo_circular}}" >
+                            </div>
+                            {{-- <div class = "items head">
+                                <img class="ui middle aligned tiny circular image " src="assets/img/allys-logo/circular/{{$project->ally->logo_circular}}" >
+                            </div> --}}
+                              
                           <div class = "items head">
-                            <p>{{$project->name}}</p>
+                            {{-- <img class="ui middle aligned tiny circular image" src="assets/img/allys-logo/circular/{{$project->ally->logo_circular}}"> --}}
+                            {{-- <p><img class="ui middle aligned tiny circular image" src="assets/img/allys-logo/circular/{{$project->ally->logo_circular}}"></p>                               --}}
+                            
+                            <p>    {{$project->name}} <br>   </p>
                           </div>
                           <div class = "items category">
-                                <p>{{$project->tag->name}}</p>
+                                <p>{{$project->tag->name}} </p>
                           </div>
 
                       </div>
-                </div>
+                    </div>
             </div>
             @endforeach
           </div>
@@ -74,19 +85,19 @@
                      @endforeach
                     @endif
 
-                    @if($tag->name == 'Diseño Web' )
+                    @if($tag->name == 'Dise単o web' )
                          @foreach($projects->where('tag_id', 2)->take(8) as $project)
                              @include('landing.componentes.partials.section_project_tab')
                         @endforeach
                     @endif
 
-                     @if($tag->name == 'Desarrollo Web' )
+                     @if($tag->name == 'Desarrollo web' )
                             @foreach($projects->where('tag_id',3)->random(8) as $project)
                              @include('landing.componentes.partials.section_project_tab')
                             @endforeach
                     @endif
                     
-                    @if($tag->name == 'Diseño Gráfico' )
+                    @if($tag->name == 'Dise単o grafico' )
                          @foreach($projects->where('tag_id',4)->take(8) as $project)
                              @include('landing.componentes.partials.section_project_tab')
                          @endforeach
