@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/', 'HomeController@landing')->name('landing');
+Route::post('load-more-projects', 'HomeController@load_more_projects');
+Route::get('load-new-tab/{tag_id}', 'HomeController@load_new_tab');
 Route::post('/contact', 'HomeController@contactUs')->name('contact');
 
 Route::get('/clear-cache', function() {

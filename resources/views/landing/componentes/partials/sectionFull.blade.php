@@ -1,6 +1,4 @@
-
-<div id="portafolio" class="p-start-end">
-    <div class="ui container mt-5">
+<div class="ui container mt-5">
         <h3 class="text-aliados">Portafolio</h3>
         {{-- Menu Grande --}}
         <div class="ui menu off-border-shadows pc">
@@ -10,10 +8,10 @@
                 </div>
                 <div class="right menu">
                 <!--TABS-->
-                <div class="ui top attached tabular menu">
-                    <a class="item active" id="0" onclick="loadNewTab(this.id);">Todos</a>
+                <div class="ui top attached tabular menu" id="tags_section_pc">
+                    <a class="item @if ($tag_id == 0) active @endif" id="0" onclick="loadNewTab(this.id);">Todos</a>
                     @foreach ($tags as $tag)
-                        <a class="item" id="{{$tag->id}}" onclick="loadNewTab(this.id);">{{$tag->name}}</a>
+                        <a class="item @if ($tag_id == $tag->id) active @endif" id="{{$tag->id}}" onclick="loadNewTab(this.id);">{{$tag->name}}</a>
                     @endforeach
                 </div>
                 <!--End Tabs-->
@@ -27,10 +25,10 @@
                 <i class="dropdown icon"></i>
                 <div class="menu ">
                 <!--TABS-->
-                <div class="ui top attached tabular menu">
-                    <a class="item active text-center" id="0" onclick="loadNewTab(this.id);">Todos</a>
+                <div class="ui top attached tabular menu" id="tags_section_movil">
+                    <a class="item text-center @if ($tag_id == 0) active @endif" id="0"onclick="loadNewTab(this.id);">Todos</a>
                     @foreach ($tags as $tag)
-                        <a class="item text-center" id="{{$tag->id}}" onclick="loadNewTab(this.id);">{{$tag->name}}</a>
+                        <a class="item text-center @if ($tag_id == $tag->id) active @endif" id="{{$tag->id}}" onclick="loadNewTab(this.id);">{{$tag->name}}</a>
                     @endforeach
                 </div>
                 <!--End Tabs-->
@@ -77,8 +75,3 @@
         </div>
     </div>
     <!--EndContent tab-->
-</div>
-
-<div id="show-more-projects" style="padding-right: 50px; width: 100%; text-align: center;">
-    <button class="ui btn-rounder button bg-blue-light text-white" type="button" onclick="loadMoreProjects();">Ver más proyectos...</button>
-</div>

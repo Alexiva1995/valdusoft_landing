@@ -1,5 +1,86 @@
 @extends('layouts.landing')
 
+@push('scripts')
+    <script>
+        function loadNewTab($tag_id){
+            //var route = 'http://localhost:8000/load-new-tab/'+$tag_id;
+            var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
+            $.ajax({
+                url: route,
+                type: "GET",
+                success:function(ans){
+                    $("#portafolio").html(ans);
+                }
+            }); 
+
+            setTimeout(function(){ 
+               refreshButton(); 
+            }, 2000);
+        }
+
+        function refreshButton(){
+            if ( parseInt($("#totalProjects").val()) > parseInt($("#cantProjects").val()) ){
+                $("#show-more-projects").css('display', 'block');
+            }else{
+                $("#show-more-projects").css('display', 'none');
+            }
+        }
+
+        function loadMoreProjects(){
+            //var route = 'http://localhost:8000/load-more-projects';
+            var route = 'https://valdusoft.com/load-more-projects';
+            var formData = new FormData(document.getElementById("form_data_projects"));
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $("#meta_token").val()    
+                },
+                url: route,
+                type: "POST",
+                data: formData,
+                processData: false,  // tell jQuery not to process the data
+                contentType: false,
+                success:function(ans){
+                    console.log(ans);
+                    $("#projects_section").html(ans);
+                    if ($("#totalProjects").val() > $("#cantProjects").val()){
+                        $("#show-more-projects").css('display', 'block');
+                    }else{
+                        $("#show-more-projects").css('display', 'none');
+                    }
+                }
+            });
+        }
+
+        function showDetails(id){
+            axios.get(`/model/${id}`)
+            .then(response => {
+                const data = response.data
+                img = document.getElementById('img-modal')
+                img.src = `/assets/img/projects-ally/${data.ally_imag}`
+                
+            })
+            .catch(err => {
+                console.log(err.response)
+            })
+            $('#image-modal').modal('show');
+        }
+    
+        function showProject(id){
+            axios.get(`/model/${id}`)
+            .then(response => {
+                const data = response.data
+                img = document.getElementById('img-modal')
+                img.src = `/assets/img/projects-porta/${data.porta_image}`
+                
+            })
+            .catch(err => {
+                console.log(err.response)
+            })
+            $('#image-modal').modal('show');
+        }
+    </script>
+@endpush
+
 @section('content')
 {{-- Inicio --}}
 <div class="fondo1" style="background: url('{{asset('assets/img/sistema/fondo-slider.png')}}')">
@@ -40,37 +121,4 @@
 {{--Modal--}}
 @include('landing.componentes.modal')
 {{--Modal--}}
-@endsection
-
-@section('scripts')
-<script>
-    function showDetails(id){
-        axios.get(`/model/${id}`)
-        .then(response => {
-            const data = response.data
-            img = document.getElementById('img-modal')
-            img.src = `/assets/img/projects-ally/${data.ally_imag}`
-            
-        })
-        .catch(err => {
-            console.log(err.response)
-        })
-        $('#image-modal').modal('show');
-    }
-    
-      function showProject(id){
-        axios.get(`/model/${id}`)
-        .then(response => {
-            const data = response.data
-            img = document.getElementById('img-modal')
-            img.src = `/assets/img/projects-porta/${data.porta_image}`
-            
-        })
-        .catch(err => {
-            console.log(err.response)
-        })
-        $('#image-modal').modal('show');
-    }
- 
-</script>
 @endsection
