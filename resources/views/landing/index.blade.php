@@ -40,7 +40,6 @@
                 processData: false,  // tell jQuery not to process the data
                 contentType: false,
                 success:function(ans){
-                    console.log(ans);
                     $("#projects_section").html(ans);
                     if ($("#totalProjects").val() > $("#cantProjects").val()){
                         $("#show-more-projects").css('display', 'block');
