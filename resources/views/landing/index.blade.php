@@ -82,7 +82,7 @@
 
 @section('content')
 {{-- Inicio --}}
-<div class="fondo1" style="background: url('{{asset('assets/img/sistema/fondo-slider.png')}}')">
+<div class="fondo1" style="background: url('{{asset('assets/img/sistema/fondo-slider.webp')}}')">
     {{-- Header --}}
     @include('layouts.componentesLanding.header')
     {{-- Fin Header --}}

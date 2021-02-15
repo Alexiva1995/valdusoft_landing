@@ -366,7 +366,7 @@ button.slick-prev, button.slick-prev:hover {
 
 </style>
 
-<div class="fondo2 p-start-end" style="background: url('{{asset('assets/img/sistema/Recurso-2logo.png')}}')" id="equipo">
+<div class="fondo2 p-start-end"  id="equipo">
     <div class="ui container mt-5">
         <div class="ui center aligned segment off-border-shadows">
             <h2 class="text-services"><strong>Miembros de nuestra empresa</strong></h2>
@@ -375,42 +375,42 @@ button.slick-prev, button.slick-prev:hover {
     </div>
 </div>
 
-<div class="slider">
-@foreach ($members as $member)
-    <div class="">
-        <!--FLIP CARD-->
-        <div class="column">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                    <div class="ui card employer off-border-shadows bg-transparent">
-                            <div class="image">
-                                <img src="{{asset('assets/img/sistema/02.png')}}">
+<div style="background: url('{{asset('assets/img/sistema/fondo-miembros.webp')}}'); width: 100%; background-repeat: no-repeat;background-size: cover;">
+    <div class="slider" style="top: 20px;">
+        @foreach ($members as $member)
+            <div class="">
+                <!--FLIP CARD-->
+                <div class="column">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="ui card employer off-border-shadows bg-transparent">
+                                    <div class="image">
+                                        <img src="{{asset('assets/img/sistema/02.png')}}">
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="center aligned text-white header">{{$member->name}}</h4>
+                                        <div class="center aligned text-white description">
+                                            Web development
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h4 class="center aligned text-white header">{{$member->name}}</h4>
-                                <div class="center aligned text-white description">
-                                    Web development
+                            <div class="flip-card-back">
+                                <div class="ui card employer off-border-shadows bg-transparent">
+                                    <div class="image">
+                                        <img src="{{asset('assets/img/sistema/02.png')}}">
+                                    </div>
+                                    <div class="content">
+                                        <p class="ui text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna libero, consequat non turpis non, porta ornare eros.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flip-card-back">
-                    <div class="ui card employer off-border-shadows bg-transparent">
-                        <div class="image">
-                            <img src="{{asset('assets/img/sistema/02.png')}}">
-                        </div>
-                        <div class="content">
-                            <p class="ui text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna libero, consequat non turpis non, porta ornare eros.</p>
-                        </div>
-                        </div>
-                    </div>
                 </div>
+                <!--END FLIP CARD-->
             </div>
-        </div>
-        <!--END FLIP CARD-->
+        @endforeach
     </div>
-@endforeach
-
-
 </div>
