@@ -3,8 +3,8 @@
 @push('scripts')
     <script>
         function loadNewTab($tag_id){
-            //var route = 'http://localhost:8000/load-new-tab/'+$tag_id;
             var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
+            //var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
             $.ajax({
                 url: route,
                 type: "GET",
@@ -27,8 +27,8 @@
         }
 
         function loadMoreProjects(){
-            //var route = 'http://localhost:8000/load-more-projects';
             var route = 'https://valdusoft.com/load-more-projects';
+            //var route = 'https://valdusoft.com/load-more-projects';
             var formData = new FormData(document.getElementById("form_data_projects"));
             $.ajax({
                 headers: {
@@ -40,7 +40,8 @@
                 processData: false,  // tell jQuery not to process the data
                 contentType: false,
                 success:function(ans){
-                    $("#projects_section").html(ans);
+                   /*  console.log(ans);*/
+                   $("#projects_section").html(ans);
                     if ($("#totalProjects").val() > $("#cantProjects").val()){
                         $("#show-more-projects").css('display', 'block');
                     }else{
@@ -51,7 +52,7 @@
         }
 
         function showDetails(id){
-            axios.get(`/model/${id}`)
+            axios.get('/model/${id}')
             .then(response => {
                 const data = response.data
                 img = document.getElementById('img-modal')
@@ -65,17 +66,18 @@
         }
     
         function showProject(id){
-            axios.get(`/model/${id}`)
+            axios.get('/project/'+id)
             .then(response => {
-                const data = response.data
-                img = document.getElementById('img-modal')
-                img.src = `/assets/img/projects-porta/${data.porta_image}`
-                
+                /*const data = response.data;
+                img = document.getElementById('img-modal');
+                img.src = `/assets/img/projects-porta/${data.porta_image}`;*/
+                $('#description-modal').html(response.data);
+                $('#description-modal').modal('show');
             })
             .catch(err => {
                 console.log(err.response)
             })
-            $('#image-modal').modal('show');
+            
         }
     </script>
 @endpush
@@ -111,13 +113,14 @@
 {{-- Nuestros Aliados --}}
 @include('landing.componentes.nuestrosAliados')
 {{-- Fin Nuestros Aliados --}}
-{{-- Miembre de nuestra empresa --}}
-@include('landing.componentes.miembroEmpresa')
+{{-- Miembre de nuestra empresa 
+@include('landing.componentes.miembroEmpresa')--}}
 {{-- Miembre de nuestra empresa --}}
 {{-- Contactanos --}}
 @include('landing.componentes.contactanos')
 {{-- Contactanos --}}
-{{--Modal--}}
-@include('landing.componentes.modal')
-{{--Modal--}}
+
+<div class="ui modal fullscreen transition basic test" id="description-modal" role="dialog" area-hidden="true" style="display: none;">
+    
+</div>
 @endsection

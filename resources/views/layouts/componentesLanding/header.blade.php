@@ -13,9 +13,9 @@
              <a class="item text-white" onclick="moveSection('#aliados')">
                 <div>Aliados</div>
             </a>
-            <a class="item text-white" onclick="moveSection('#equipo')">
+            <!--<a class="item text-white" onclick="moveSection('#equipo')">
                 <div>Equipo</div>
-            </a>
+            </a>-->
             <a class="item text-white" onclick="moveSection('#contactanos')">
                 <div>Contacto</div>
             </a>
@@ -39,9 +39,9 @@
                 <div>Aliados</div>
             </a>
             
-            <a class="item text-white text-center">
+            <!--<a class="item text-white text-center">
                 <div>Equipo</div>
-            </a>
+            </a>-->
             <a class="item text-white text-center">
                 <div>Contacto</div>
             </a>
