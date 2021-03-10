@@ -2,6 +2,16 @@
 
 @push('scripts')
     <script>
+        $(document).ready(function(){
+            $('.allies-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                variableWidth: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+        });
+
         function loadNewTab($tag_id){
             var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
             //var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
