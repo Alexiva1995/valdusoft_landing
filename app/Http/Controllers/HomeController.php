@@ -219,8 +219,16 @@ class HomeController extends Controller
             'message' => 'required|min:26',
 
         ]);
-       Contact::create($request->all());
-      Mail::to('alexisjoseva95@gmail.com')->queue(new MessageReceived($msg));
-      return back()->with('success', 'Su mensaje se ha enviado ¡Gracias por contactarnos!');
+        Contact::create($request->all());
+        Mail::to('alexisjoseva95@gmail.com')->queue(new MessageReceived($msg));
+
+        $data['email'] = $request->email;
+        Mail::send('emails.messageSuccess', ['data' => $data], function($msg) use ($data){
+            $msg->to($data['email']);
+            $msg->subject('Solicitud Recibida');
+            $msg->from('info@valdusoft.com');
+        });
+
+        return back()->with('success', 'Su mensaje se ha enviado ¡Gracias por contactarnos!');
     }
 }

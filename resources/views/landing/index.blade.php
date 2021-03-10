@@ -99,6 +99,16 @@
     @include('layouts.componentesLanding.header')
     {{-- Fin Header --}}
 
+    @if (Session::has('success'))
+        <div class="ui container success message">
+            <i class="close icon"></i>
+            <div class="header">
+                ¡Mensaje Enviado!
+            </div>
+            <p>Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarnos!</p>
+        </div>
+    @endif
+
     <div class="ui container center-center text-white">
         <div class="ui center aligned segment bg-transparent text-white off-border-shadows">
             <h2><strong class="f-900">¡LO QUE IMAGINAS ES POSIBLE!</strong></h2>
