@@ -210,15 +210,8 @@ class HomeController extends Controller
 
     public function contactUs(Request $request)
     {
-       
-        $msg = request()->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required|min:11',
-            'subject' => 'required|min:7',
-            'message' => 'required|min:26',
-
-        ]);
+        $msg = request()->all();
+        
         Contact::create($request->all());
         Mail::to('alexisjoseva95@gmail.com')->queue(new MessageReceived($msg));
 

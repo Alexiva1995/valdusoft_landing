@@ -207,8 +207,8 @@ a.item:hover span{
 .ally-item-slider{
 	margin-left: 30px; 
 	margin-right: 30px;
-	opacity: 0.6;
+	/*opacity: 0.6;*/
 }
-.ally-item-slider:hover{
+/*.ally-item-slider:hover{
 	opacity: 1;
-}
+}*/

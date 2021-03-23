@@ -1,5 +1,8 @@
-<div class="ui allies">
-    <div class="allies-slider">
+<div class="ui allies" id="aliados">
+    <div class="ui container mt-3" >
+        <h3 class="text-aliados">Aliados</h3>
+    </div>
+    <div class="allies-slider mt-5">
         <div class="ally-item-slider">
             <img class="image" src="assets/img/allys-logo/smart_bunny.webp">
         </div>
@@ -20,4 +23,8 @@
         </div>
     </div>
 </div>
+
+
+
+
 

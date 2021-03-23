@@ -45,27 +45,27 @@
                             @csrf
                             <div class="equal width fields">
                                 <div class="field">
-                                    <input name="name" class="placeholder-color" type="text" placeholder="Nombre" value="{{ old('name')}}" >
+                                    <input name="name" class="placeholder-color" type="text" placeholder="Nombre" value="{{ old('name')}}" required>
                                     {!! $errors->first('name', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                                 <div class="field">
-                                    <input name="email" class="placeholder-color" type="email" placeholder="Email" value="{{ old('email')}}" >
+                                    <input name="email" class="placeholder-color" type="email" placeholder="Email" value="{{ old('email')}}" required>
                                     {!! $errors->first('email', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
                             <div class="equal width fields">
                                 <div class="field">
-                                    <input name="subject" class="placeholder-color" type="text" placeholder="Asunto" value="{{ old('subject')}}" >
+                                    <input name="subject" class="placeholder-color" type="text" placeholder="Asunto" value="{{ old('subject')}}" minlength="7" required>
                                     {!! $errors->first('subject', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                                 <div class="field">
-                                    <input name="phone" class="placeholder-color" type="text" placeholder="Teléfono" value="{{ old('phone')}}" >
+                                    <input name="phone" class="placeholder-color" type="text" placeholder="Teléfono" value="{{ old('phone')}}" minlength="11" required>
                                     {!! $errors->first('phone', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
                             <div class="equal width fields">
                                 <div class="field">
-                                    <textarea name="message" class="placeholder-color" rows="2" placeholder="Mensaje">{{ old('message')}}</textarea>
+                                    <textarea name="message" class="placeholder-color" rows="2" placeholder="Mensaje" minlength="26" required>{{ old('message')}}</textarea>
                                     {!! $errors->first('message', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
