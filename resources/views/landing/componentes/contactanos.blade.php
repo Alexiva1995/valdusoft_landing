@@ -69,6 +69,10 @@
                                     {!! $errors->first('message', '<small class="text-white">:message</small><br>') !!}
                                 </div>
                             </div>
+                            
+                            <div class="g-recaptcha" data-sitekey="6LdTkKAaAAAAAFDeD3XBngiRW3qVAusWf91s6diz"></div>
+                            {!! $errors->first('g-recaptcha-response', '<small class="text-white">El campo del captcha es obligatorio</small><br>') !!}
+
                             <button class="ui btn-rounder right floated button bg-blue-light text-white" type="submit">Contáctanos</button>
                         </form>
                     </div>
@@ -81,7 +85,7 @@
             <div class="ui container">
                 <div class="ui left aligned basic segment">
                     <h1 class="btn-social">
-                        <a href="https://www.facebook.com/" target="_blank" class="btn"><i class="facebook f icon text-white"></i></a>
+                        <a href="https://www.facebook.com/Valdusoft-100400218791444" target="_blank" class="btn"><i class="facebook f icon text-white"></i></a>
                         <a href="https://www.instagram.com/" target="_blank" class="btn"><i class="instagram icon text-white"></i></a>
                     </h1>
                 </div>

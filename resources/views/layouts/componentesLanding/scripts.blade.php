@@ -7,3 +7,5 @@
 <script src="{{asset('assets/Slick/slick/slick.min.js')}}"></script>
 {{-- Custom JS --}}
 <script src="{{asset('assets/js/scriptLanding.js')}}"></script>
+{{-- Recatcha --}}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

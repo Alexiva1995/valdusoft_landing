@@ -41,17 +41,27 @@ class HomeController extends Controller
     public function contactUs(Request $request)
     {
        // return $request->all();
-        $msg = request()->validate([
+       request()->validate([
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required|min:7',
             'phone' => 'required|min:13',
             'message' => 'required|min:26',
-
+            'g-recaptcha-response' => 'required',
         ]);
-        Contact::create($request->all());
 
-      Mail::to('crisleivysngil@gmail.com')->queue(new MessageReceived($msg));
+       $msg = ([
+        'name' => $request->get('name'),
+        'email' => $request->get('email'),
+        'subject' => $request->get('subject'),
+        'phone' => $request->get('phone'),
+        'message' => $request->get('message'),
+        ]);
+
+            
+      Contact::create($msg);
+
+      Mail::to('bryanjose846@gmail.com')->queue(new MessageReceived($msg));
       // Mail::to('alexisjoseva95@gmail.com')->queue(new MessageReceived($msg));
       return back()->with('success', 'Su mensaje se ha enviado ¡Gracias por contactarnos!');
     }
