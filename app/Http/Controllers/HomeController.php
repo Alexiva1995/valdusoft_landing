@@ -208,20 +208,29 @@ class HomeController extends Controller
         return view('landing.componentes.modal')->with(compact('proyecto'));
     }
 
-    public function contactUs(Request $request)
-    {
-        $msg = request()->all();
-        
-        Contact::create($request->all());
-        Mail::to('alexisjoseva95@gmail.com')->queue(new MessageReceived($msg));
+    public function contactUs(Request $request){
+       // return $request->all();
+       request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required|min:7',
+            'phone' => 'required|min:13',
+            'message' => 'required|min:26',
+            'g-recaptcha-response' => 'required',
+        ]);
 
-        $data['email'] = $request->email;
-        Mail::send('emails.messageSuccess', ['data' => $data], function($msg) use ($data){
-            $msg->to($data['email']);
-            $msg->subject('Solicitud Recibida');
-            $msg->from('info@valdusoft.com');
-        });
+       	$msg = ([
+        	'name' => $request->get('name'),
+        	'email' => $request->get('email'),
+        	'subject' => $request->get('subject'),
+        	'phone' => $request->get('phone'),
+        	'message' => $request->get('message'),
+        ]);
 
-        return back()->with('success', 'Su mensaje se ha enviado ¡Gracias por contactarnos!');
+      	Contact::create($msg);
+
+      	//Mail::to('bryanjose846@gmail.com')->queue(new MessageReceived($msg));
+      	Mail::to('alexisjoseva95@gmail.com')->queue(new MessageReceived($msg));
+      	return back()->with('success', 'Su mensaje se ha enviado ¡Gracias por contactarnos!');
     }
 }
