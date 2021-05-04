@@ -28,9 +28,40 @@ class HomeController extends Controller
     public function admin(){
         $proyectos = Project::with('ally', 'tags', 'technologies')
                         ->orderBy('id', 'ASC')
-                        ->get();
+                        ->paginate(10);
+        
+        $aliados = Ally::orderBy('id', 'ASC')->get();
 
-        return view('admin')->with(compact('proyectos'));
+        $etiquetas = Tag::orderBy('id', 'ASC')->get();
+
+        $tecnologias = Technology::orderBy('id', 'ASC')->get();
+
+        return view('admin')->with(compact('proyectos', 'aliados', 'etiquetas', 'tecnologias'));
+    }
+
+    public function store_project(Request $request){
+        $proyecto = new Project($request->all());
+        $proyecto->ally_imag = 'Logo-2.png';
+        $proyecto->porta_image = 'Logo-1.webp';
+        $proyecto->save();
+
+        if (!is_null($request->tags)){
+            foreach ($request->tags as $tag){
+                DB::table('projects_tags')->insert(
+                    ['project_id' => $proyecto->id, 'tag_id' => $tag]
+                );
+            }
+        }
+
+        if (!is_null($request->technologies)){
+            foreach ($request->technologies as $technology){
+                DB::table('projects_technologies')->insert(
+                    ['project_id' => $proyecto->id, 'technology_id' => $technology]
+                );
+            }
+        }
+
+        return redirect('admin')->with('msj-exitoso', 'Proyecto Creado con Éxito');
     }
 
     public function edit_project($id){

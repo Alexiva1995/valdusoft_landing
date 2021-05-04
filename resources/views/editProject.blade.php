@@ -22,9 +22,14 @@
 		@endif
 
     	<div class="modal-content">
-      		<div class="modal-header">
-        		<h5 class="modal-title">Editar Proyecto</h5>
-			</div>
+            <div class="modal-header" style="background-color: #00508f;">
+                <div class="col-6">
+                    <img src="https://valdusoft.com/assets/img/sistema/Logo.png" class="img-logo" width="300">
+                </div>
+                <div class="col-6 text-right">
+                    <h3 class="text-white">Editar Proyecto</h3>
+                </div>
+            </div>
 			<form method="POST" action="{{ route('admin.update-project') }}">
 				@csrf
 				<input type="hidden" name="project_id" value="{{ $proyecto->id }}">
@@ -81,7 +86,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<a type="button" href="{{ route('admin.projects') }}" class="btn btn-secondary">Cancelar</a>
 				    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 				</div>
 			</form>

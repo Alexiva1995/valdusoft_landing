@@ -19,8 +19,9 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function(){
-	Route::get('/', 'HomeController@admin');
+	Route::get('/', 'HomeController@admin')->name('admin.projects');
 	Route::get('edit-project/{id}', 'HomeController@edit_project')->name('admin.edit-project');
+    Route::post('store-project', 'HomeController@store_project')->name('admin.store-project');
 	Route::post('update-project', 'HomeController@update_project')->name('admin.update-project');
 });
 
