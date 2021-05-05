@@ -16,7 +16,7 @@ use App\Models\Project;
 
 Route::get('/', function () {
     return view('landing.index');
-});
+})->name('landing');
 
 Route::group(['prefix' => 'admin'], function(){
 	Route::get('/', 'HomeController@admin')->name('admin.projects');

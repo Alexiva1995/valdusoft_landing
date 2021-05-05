@@ -98,7 +98,7 @@
         </div>
         <div class="four wide column">
             <div class="ui right aligned basic segment">
-                <img src="{{asset('assets/img/sistema/Logo.png')}}" class="img-logo">
+                <a href="#" onclick="moveSection('#inicio')"><img src="{{asset('assets/img/sistema/Logo.png')}}" class="img-logo"></a>
             </div>
         </div>
     </div>
