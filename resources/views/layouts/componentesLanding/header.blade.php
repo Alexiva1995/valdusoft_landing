@@ -10,10 +10,10 @@
             <a class="item text-white" onclick="moveSection('#portafolio')">
                 <div>Portafolio</div>
             </a>
-             <a class="item text-white" onclick="moveSection('#aliados')">
+            <!-- <a class="item text-white" onclick="moveSection('#aliados')">
                 <div>Aliados</div>
             </a>
-            <!--<a class="item text-white" onclick="moveSection('#equipo')">
+            <a class="item text-white" onclick="moveSection('#equipo')">
                 <div>Equipo</div>
             </a>-->
             <a class="item text-white" onclick="moveSection('#contactanos')">

@@ -55,6 +55,7 @@
                             <th>Aliado</th>
                             <th>Etiquetas</th>
                             <th>Tecnologías</th>
+                            <th>Estado</th>
                             <th>Acción</th>
                         </thead>
                         <tbody>
@@ -74,6 +75,13 @@
                                         @foreach ($proyecto->technologies as $technology)
                                             {{ $technology->name }}({{ $technology->id}}),
                                         @endforeach
+                                    </td>
+                                    <td>
+                                        @if ($proyecto->status == 0)
+                                            <label style="padding: 5px 10px; border-radius: 10px; background-color: red; color: white;">Inactivo</label>
+                                        @else
+                                            <label style="padding: 5px 10px; border-radius: 10px; background-color: green; color: white;">Activo</label>
+                                        @endif
                                     </td>
                                     <td>
                                         <a class="btn btn-primary" href="{{ route('admin.edit-project', $proyecto->id) }}"><i class="fa fa-pencil"></i></a>

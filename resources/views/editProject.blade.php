@@ -34,56 +34,79 @@
 				@csrf
 				<input type="hidden" name="project_id" value="{{ $proyecto->id }}">
 				<div class="modal-body">
-					<div class="form-group">
-					    <label for="name">Nombre</label>
-					    <input type="text" class="form-control" name="name" value="{{ $proyecto->name }}">
-					</div>
-					<div class="form-group">
-					    <label for="link">Link</label>
-					    <input type="text" class="form-control" name="link" value="{{ $proyecto->link }}">
-					</div>
-					<div class="form-group">
-					    <label for="description">Descripción</label>
-					    <input type="text" class="form-control" name="description" value="{{ $proyecto->description }}">
-					</div>
-					<div class="form-group">
-						<label for="ally">Aliado</label>
-					    <select class="form-control" name="ally_id" id="ally_id">
-					    	@foreach ($aliados as $aliado)
-					    		<option value="{{ $aliado->id }}" @if ($aliado->id == $proyecto->ally_id) selected @endif>{{ $aliado->name }}</option>
-					    	@endforeach
-					    </select>
-					</div>
-					<div class="form-group">
-					    <label for="ally">Etiquetas</label><br>
-					    @foreach ($etiquetas as $etiqueta)
-					    	@php
-					    		$check = 0;
-					    		if (in_array($etiqueta->id, $etiquetasActivas)){
-								    $check = 1;
-								}
-							@endphp
-						    <div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox" id="tag-{{$etiqueta->id}}" name="tags[]" value="{{ $etiqueta->id}}" @if ($check == 1) checked @endif>
-								<label class="form-check-label" for="tag-{{$etiqueta->id}}">{{ $etiqueta->name }}({{ $etiqueta->id }})</label>
-							</div>
-						@endforeach
-					</div>
-					<div class="form-group">
-						<label for="ally">Tecnologías</label><br>
-					    @foreach ($tecnologias as $tecnologia)
-					    	@php
-					    		$check2 = 0;
-					    		if (in_array($tecnologia->id, $tecnologiasActivas)){
-								    $check2 = 1;
-								}
-							@endphp
-						    <div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox" id="technology-{{$tecnologia->id}}" name="technologies[]" value="{{ $tecnologia->id}}" @if ($check2 == 1) checked @endif>
-								<label class="form-check-label" for="technology-{{$tecnologia->id}}">{{ $tecnologia->name }}({{ $tecnologia->id }})</label>
-							</div>
-						@endforeach
-					</div>
+                    <div class="row">
+                        <div class="col-12"> 
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" name="name" value="{{ $proyecto->name }}">
+                            </div>
+                        </div>
+                        <div class="col-12"> 
+                            <div class="form-group">
+                                <label for="link">Link</label>
+                                <input type="text" class="form-control" name="link" value="{{ $proyecto->link }}">
+                            </div>
+                        </div>
+                        <div class="col-12"> 
+                            <div class="form-group">
+                                <label for="description">Descripción</label>
+                                <input type="text" class="form-control" name="description" value="{{ $proyecto->description }}">
+                            </div>
+                        </div>
+                        <div class="col-6"> 
+                            <div class="form-group">
+                                <label for="ally">Aliado</label>
+                                <select class="form-control" name="ally_id" id="ally_id">
+                                    @foreach ($aliados as $aliado)
+                                        <option value="{{ $aliado->id }}" @if ($aliado->id == $proyecto->ally_id) selected @endif>{{ $aliado->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6"> 
+                            <div class="form-group">
+                                <label for="status">Estado</label>
+                                <select class="form-control" name="status" id="status">
+                                    <option value="0" @if ($proyecto->status == 0) selected @endif>Inactivo</option>
+                                    <option value="1" @if ($proyecto->status == 1) selected @endif>Activo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12"> 
+                            <div class="form-group">
+                                <label for="ally">Etiquetas</label><br>
+                                @foreach ($etiquetas as $etiqueta)
+                                    @php
+                                        $check = 0;
+                                        if (in_array($etiqueta->id, $etiquetasActivas)){
+                                            $check = 1;
+                                        }
+                                    @endphp
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="tag-{{$etiqueta->id}}" name="tags[]" value="{{ $etiqueta->id}}" @if ($check == 1) checked @endif>
+                                        <label class="form-check-label" for="tag-{{$etiqueta->id}}">{{ $etiqueta->name }}({{ $etiqueta->id }})</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="col-12"> 
+                            <div class="form-group">
+                                <label for="ally">Tecnologías</label><br>
+                                @foreach ($tecnologias as $tecnologia)
+                                    @php
+                                        $check2 = 0;
+                                        if (in_array($tecnologia->id, $tecnologiasActivas)){
+                                            $check2 = 1;
+                                        }
+                                    @endphp
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="technology-{{$tecnologia->id}}" name="technologies[]" value="{{ $tecnologia->id}}" @if ($check2 == 1) checked @endif>
+                                        <label class="form-check-label" for="technology-{{$tecnologia->id}}">{{ $tecnologia->name }}({{ $tecnologia->id }})</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
 				</div>
 				<div class="modal-footer">
 					<a type="button" href="{{ route('admin.projects') }}" class="btn btn-secondary">Cancelar</a>

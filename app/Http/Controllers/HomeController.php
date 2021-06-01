@@ -134,11 +134,12 @@ class HomeController extends Controller
         //$projects = Project::with('tag')->get();
         $projects = Project::with('ally', 'tags', 'technologies')
                         ->withCount('tags', 'technologies')
+                        ->where('status', '=', 1)
                         ->orderByRaw('RAND()')
                         ->take(8)
                         ->get();
 
-        $totalProjects = Project::count();
+        $totalProjects = Project::where('status', '=', 1)->count();
         $listedProjects = array();
         $cantProjects = 0;
         foreach ($projects as $p){
@@ -161,6 +162,7 @@ class HomeController extends Controller
         if ($request->tag_id == 0){
             $newProjects = Project::with('ally', 'tags', 'technologies')
                             ->withCount('tags', 'technologies')
+                            ->where('status', '=', 1)
                             ->whereNotIn('id', $listedProjects)
                             ->orderByRaw('RAND()')
                             ->take(8)
@@ -170,7 +172,8 @@ class HomeController extends Controller
                             ->withCount('tags', 'technologies')
                             ->whereHas('tags', function($query) use($tag_id){
                                 $query->where('tag_id', '=', $tag_id);
-                            })->whereNotIn('id', $listedProjects)
+                            })->where('status', '=', 1)
+                            ->whereNotIn('id', $listedProjects)
                             ->orderByRaw('RAND()')
                             ->take(8)
                             ->get();
@@ -198,6 +201,7 @@ class HomeController extends Controller
 
             $projects = Project::with('ally', 'tags', 'technologies')
                             ->withCount('tags', 'technologies')
+                            ->where('status', '=', 1)
                             ->orderByRaw('RAND()')
                             ->take(8)
                             ->get();
@@ -211,13 +215,15 @@ class HomeController extends Controller
                                 ->withCount('tags', 'technologies')
                                 ->whereHas('tags', function($query) use($tag_id){
                                     $query->where('tag_id', '=', $tag_id);
-                                })->count();
+                                })->where('status', '=', 1)
+                                ->count();
 
             $projects = Project::with('ally', 'tags', 'technologies')
                             ->withCount('tags', 'technologies')
                             ->whereHas('tags', function($query) use ($tag_id){
                                 $query->where('tag_id', '=', $tag_id);
-                            })->orderByRaw('RAND()')
+                            })->where('status', '=', 1)
+                            ->orderByRaw('RAND()')
                             ->take(8)
                             ->get();
 

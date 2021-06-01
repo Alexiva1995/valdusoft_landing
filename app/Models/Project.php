@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = [
-        'name', 'link', 'description', 'ally_id', 'ally_imag', 'porta_image', 'image',
+        'name', 'link', 'description', 'ally_id', 'ally_imag', 'porta_image', 'image', 'status'
     ];
 
     public function ally(){

@@ -130,8 +130,8 @@
 {{-- Nuestros Trabajos --}}
 @include('landing.componentes.nuestrosTrabajos')
 {{-- Fin Nuestros Trabajos --}}
-{{-- Nuestros Aliados --}}
-@include('landing.componentes.nuestrosAliados')
+{{-- Nuestros Aliados 
+@include('landing.componentes.nuestrosAliados')--}}
 {{-- Fin Nuestros Aliados --}}
 {{-- Miembre de nuestra empresa 
 @include('landing.componentes.miembroEmpresa')--}}
