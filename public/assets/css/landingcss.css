@@ -212,3 +212,27 @@ a.item:hover span{
 /*.ally-item-slider:hover{
 	opacity: 1;
 }*/
+.contact-section-button{
+    text-align: right;
+}
+.contact-section-captcha{
+    text-align: left;
+}
+@media (max-width: 540px) {
+    .contact-section-left{
+        text-align: center;
+    }
+    .contact-section-button{
+        text-align: center;
+    }
+    .contact-section-captcha{
+        text-align: center;
+    }
+    .g-recaptcha {
+        display: inline-block;
+    }
+    .image-modal{
+        width: 250px;
+        height: 250px;
+    }
+}

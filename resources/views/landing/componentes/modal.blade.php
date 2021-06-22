@@ -1,6 +1,6 @@
 <i class="close icon" style="color: white;"></i>    
-<div class="image content">
-    <img class="image" src="{{ asset('assets/img/projects-porta/'.$proyecto->porta_image) }}">
+<div class="image content modal-content">
+    <img class="image image-modal" src="{{ asset('assets/img/projects-porta/'.$proyecto->porta_image) }}">
 	<div class="description">
 		<div class="ui items head-modal">
 	    	<div class="item project-name-modal">{{ $proyecto->name }}</div>

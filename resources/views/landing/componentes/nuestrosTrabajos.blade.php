@@ -41,7 +41,7 @@
     <!--Content tab-->
     <div class="ui bottom attached tab segment active" data-tab="todos">
         <div class="ui grid">
-            <div class="doubling four column row portafolio" id="projects_section">
+            <div class="doubling four column row stackable portafolio" id="projects_section">
                 <form id="form_data_projects">
                     <input type="hidden" id="meta_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="projects" id="projects" value="{{ json_encode($projects) }}">
