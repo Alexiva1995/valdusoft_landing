@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2021 a las 16:27:23
+-- Tiempo de generación: 30-08-2021 a las 15:30:30
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -184,7 +184,8 @@ CREATE TABLE `projects` (
   `ally_id` bigint(20) UNSIGNED NOT NULL,
   `ally_imag` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `porta_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '0 = Inactivo. 1 = Activo',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -193,59 +194,59 @@ CREATE TABLE `projects` (
 -- Volcado de datos para la tabla `projects`
 --
 
-INSERT INTO `projects` (`id`, `name`, `link`, `description`, `ally_id`, `ally_imag`, `porta_image`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Efranet', 'https://www.efranet.net/', 'Desarrollo en Wordpress, Agencia de hosting y Almacenamiento', 1, 'Logo-2.png', 'Logo-1.webp', '', NULL, '2021-03-09 19:53:13'),
-(2, 'Ccyt', 'https://www.behance.net/gallery/31621473/Arreglos-a-pagina-web-de-ccyt', 'Web Informativa realizada en Wordpress para centro de educacion', 9, 'ccyt.webp', 'ccyt.webp', '', NULL, NULL),
-(3, 'Only kite surf', 'http://www.onlykiteschool.com.ar/', 'Desarrollo Web a medida en HTML5, CSS3, JS, Jquery y bootstrap 3, basada en la tecnica pixel perfect', 4, 'only_kite_surf.webp', 'only_kite_surf.webp', '', NULL, NULL),
-(4, 'Profesores extranjeros', 'https://profesoresextranjeros.com/', 'Rediseño de web informativa en Drupal con técnicas UI/UX', 6, 'profesores_extranjeros.webp', 'profesores_extranjeros.webp', '', NULL, NULL),
-(5, 'Preansa', 'http://www.preansa.com.co/', 'Web Corporativa realizada en Wordpress', 5, 'preansa.webp', 'preansa.webp', '', NULL, NULL),
-(6, 'MBA', 'https://mybusinessacademypro.com/academia', 'Desarrollo web en laravel y VueJs, con sistema de streaming', 2, 'mba.webp', 'mba.webp', '', NULL, '2021-03-09 20:17:52'),
-(7, 'Fxecrypto', 'https://www.ecryptosmart.com/', 'Desarrollo con laravel y 3web.js integración a blochain', 7, 'fxecrypto.webp', 'fxecrypto.webp', '', NULL, NULL),
-(8, 'Transformate', 'https://transformatepro.com/', 'Plataforma E-Learning con Laravel y Uikit CSS', 7, 'transformate.webp', 'transformate.webp', '', NULL, '2021-03-09 20:23:08'),
-(9, 'Levelup', 'https://comunidadlevelup.com/', 'Sotfware Multinivel Con Laravel', 7, 'levelup.webp', 'levelup.webp', '', NULL, '2021-03-09 20:23:35'),
-(10, 'Cruzatel', 'https://www.cruzatel.com/', 'Software Multinivel con Laravel e Integración a Coinpayments', 7, 'cruzatel.webp', 'cruzatel.webp', '', NULL, '2021-03-09 20:24:30'),
-(11, 'Breve', 'https://breve.com.co/programardomicilio', 'Software para Deliverys, Laravel', 7, 'breve.webp', 'breve.webp', '', NULL, '2021-03-09 20:24:59'),
-(12, 'Bananalegal', 'https://legalbananas.com/', 'Software para administración y firma de documentos por medio de blockchain', 7, 'banana_legal.webp', 'banana_legal.webp', '', NULL, '2021-03-09 20:25:27'),
-(13, 'Brainbow', 'https://brainbow.capital/', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'brainbow.webp', 'brainbow.webp', '', NULL, '2021-03-09 20:26:05'),
-(14, 'Universal Profits', 'https://universal-profits.com/mioficina/login', 'Software Multinivel con Laravel e integración a Coinpayments, control de inversiones', 9, 'universal_prfits.webp', 'universal_prfits.webp', '', NULL, '2021-03-09 20:27:18'),
-(15, 'Unión Capital', 'https://mioficina.unioncapital.eu/', 'Software Multinivel con Laravel e integración a Coinpayments,', 7, 'union_capital.webp', 'union_capital.webp', '', NULL, '2021-03-09 20:27:47'),
-(16, 'Royal green', 'https://royalgreen.company/mioficina/login', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'royal_green.webp', 'royal_green.webp', '', NULL, '2021-03-09 20:28:17'),
-(17, 'Viral media', 'https://viralmediapanel.com/', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'viral-media.webp', 'viral-media.webp', '', NULL, '2021-03-09 20:28:56'),
-(18, 'Emedusc', 'https://emeduc.org/sobre-nosotros/', 'LMS en Wordpress y Woocommerce', 7, 'emedusc.webp', 'emedusc.webp', '', NULL, '2021-03-09 20:29:36'),
-(19, 'Calzado Garvi', 'https://www.behance.net/gallery/40896299/Garvi', 'Ecommerce de Zapatería realizado en Magento', 7, 'calzado_garvi.webp', 'calzado_garvi.webp', '', NULL, '2021-03-09 20:30:13'),
-(20, 'Instituto Especial Colón', 'https://www.behance.net/gallery/31965983/Instituto-Especial-colon', 'Web informativa para instituto Especial', 7, 'instituto_color.webp', 'instituto_color.webp', '', NULL, '2021-03-09 20:30:44'),
-(21, 'Enterprise', 'https://www.behance.net/gallery/36368447/Diseno-web-y-Sistema-php-para-Enterprice            Xkd', 'Sistema de Tranking en PHP', 7, 'enterprise.webp', 'enterprise.webp', '', NULL, '2021-03-09 20:31:08'),
-(22, 'XKD', 'https://www.behance.net/gallery/37734099/Diseno-web-Xkd', 'Ecommerce con customizador de camisetas Wordpress', 7, 'xkd-enterprise2.webp', 'xkd-enterprise2.webp', '', NULL, '2021-03-09 20:31:42'),
-(23, 'Alimac', 'https://www.behance.net/gallery/38189091/Alimac', 'Tienda de videojuegos en Prestashop', 7, 'alimac.webp', 'alimac.webp', '', NULL, '2021-03-09 20:32:06'),
-(24, 'Magic travel', 'https://www.behance.net/gallery/109277841/Magic-Travel', 'Web Informativa realizada en Wordpress', 7, 'magic_travel.webp', 'magic_travel.webp', '', NULL, '2021-03-09 20:32:32'),
-(25, 'Tinytu', 'https://www.behance.net/gallery/40897253/Tinytu', 'Ecommerce de títeres en Prestashop', 7, 'tinytu.webp', 'tinytu.webp', '', NULL, '2021-03-09 20:32:56'),
-(26, 'Fittech', 'https://valdusoft.com/', 'App Móvil de entrenamiento y nutrición', 1, 'fittech.webp', 'fittech.webp', '', NULL, '2021-03-09 20:19:06'),
-(27, 'Liso y liso', 'https://lisosylisos.co', 'Web Informativa realizada en Wordpress', 1, 'lisos_lisos.webp', 'lisos_lisos.webp', '', NULL, '2021-03-09 20:19:48'),
-(28, 'Hs stone', 'https://www.hsstonegallery.com/', 'Catálogo realizado en Wordpress', 1, 'hs_stone.webp', 'hs_stone.webp', '', NULL, '2021-03-09 20:20:20'),
-(31, 'Recomiendo', 'https://valdusoft.com/', 'App Movil de sitios y comidas', 1, 'recomiendo.webp', 'recomiendo.webp', '', NULL, '2021-03-09 20:20:53'),
-(32, 'Bastian', 'https://valdusoft.com/', 'App Móvil de Captación', 1, 'bastian.webp', 'bastian.webp', '', NULL, '2021-03-09 20:21:30'),
-(33, 'Dore The Golden Cake', 'https://dorethegoldencake.com/', 'Web Informativa realizada en Wordpress', 9, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:49:00', '2021-03-09 20:16:21'),
-(34, 'Lavanderia Universal', 'http://lavanderiauniversal.com/', 'Web Informativa realizada en Wordpress', 9, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:54:15', '2021-03-09 20:16:38'),
-(35, 'Sello de confianza', 'https://valdusoft.com/', 'Formulario y backoffice', 7, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:49:00', '2021-02-18 23:49:00'),
-(36, 'Dimelo', 'https://dimelo.vip/', 'Web de captación realizada en React.js', 1, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:49:00', '2021-02-18 23:49:00'),
-(37, 'GoldenBIT', 'http://goldenbit.company/', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:49:00', '2021-03-09 20:34:19'),
-(38, 'Trasendence', 'https://eventos.universal-profits.com/', 'Landing de captación con embudo de venta', 7, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:49:00', '2021-03-09 20:34:40'),
-(39, 'Wealht ocean', 'https://valdusoft.com/', 'Landing web informativa y backoffice', 7, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(40, 'FTX Live', 'http://ftxlive.com/office', 'Dsearrollo web en laravel y VueJs, con sistema de streaming', 2, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(41, 'Vitawel', 'https://valdusoft.com/', 'Dsearrollo web en laravel y Angular', 7, 'Logo-2.png', 'vitawel.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(42, 'Tienda Impaz', 'https://valdusoft.com', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'impaz.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(43, 'Merciad', 'https://valdusoft.com/', 'Desarrollo web en laravel', 7, 'Logo-2.png', 'merciad.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(44, 'TecnoBox Store', 'https://valdusoft.com', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'tecnobox.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(45, 'Tecno Pug', 'https://valdusoft.com', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'tecnopug.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(47, 'Alma Coach', 'https://amacoach.com/', 'Web de membresías en Wordpress', 3, 'alma_coach.webp', 'alma_coach.webp', '', NULL, '2021-03-09 20:09:45'),
-(48, 'America del Sur', 'https://amacoach.com/', 'Ecommerce con Magento de moda', 3, 'america_del_sur.webp', 'america_del_sur.webp', '', NULL, NULL),
-(49, 'Chineko', 'https://chineko.com.ar/', 'Ecommerce de cholas con Wordpress', 3, 'chineko.webp', 'chineko.webp', '', NULL, NULL),
-(50, 'Dino Butelli', 'https://dinobutelli.com.ar/', 'Ecommerce de calzado con Wordpress', 3, 'dino_butelli.webp', 'dino_butelli.webp', '', NULL, NULL),
-(51, 'Zumik', 'https://pintureriaszumik.com.ar/', 'Catalogo realizada en Wordpress', 3, 'szumik.webp', 'szumik.webp', '', NULL, '2021-03-09 20:12:56'),
-(52, 'Zetla', 'https://zetla.com.ar/', 'Desarrollo landing pixel perfect', 3, 'zetla.webp', 'zetla.webp', '', NULL, NULL),
-(53, 'Fullpowermoto', 'https://fullpowermoto.com/', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:49:00', '2021-02-18 23:49:00'),
-(54, 'Zona Inmobiliaria', 'https://valdusoft.com', 'Venta de inmuebles en wordpres', 3, 'Logo-2.png', 'Logo-1.webp', '', '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
-(55, 'Pawsitivebox', 'http://pawsitivebox.com/', 'Ecommerce con Wordpress', 9, 'Logo-2.png', 'Logo-1.webp', '', '2021-03-09 16:38:02', '2021-03-09 20:32:06');
+INSERT INTO `projects` (`id`, `name`, `link`, `description`, `ally_id`, `ally_imag`, `porta_image`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Efranet', 'https://www.efranet.net/', 'Desarrollo en Wordpress, Agencia de hosting y Almacenamiento', 1, 'Logo-2.png', 'Logo-1.webp', '', 1, NULL, '2021-03-09 19:53:13'),
+(2, 'Ccyt', 'https://www.behance.net/gallery/31621473/Arreglos-a-pagina-web-de-ccyt', 'Web Informativa realizada en Wordpress para centro de educacion', 9, 'ccyt.webp', 'ccyt.webp', '', 1, NULL, NULL),
+(3, 'Only kite surf', 'http://www.onlykiteschool.com.ar/', 'Desarrollo Web a medida en HTML5, CSS3, JS, Jquery y bootstrap 3, basada en la tecnica pixel perfect', 4, 'only_kite_surf.webp', 'only_kite_surf.webp', '', 1, NULL, NULL),
+(4, 'Profesores extranjeros', 'https://profesoresextranjeros.com/', 'Rediseño de web informativa en Drupal con técnicas UI/UX', 6, 'profesores_extranjeros.webp', 'profesores_extranjeros.webp', '', 1, NULL, NULL),
+(5, 'Preansa', 'http://www.preansa.com.co/', 'Web Corporativa realizada en Wordpress', 5, 'preansa.webp', 'preansa.webp', '', 1, NULL, NULL),
+(6, 'MBA', 'https://mybusinessacademypro.com/academia', 'Desarrollo web en laravel y VueJs, con sistema de streaming', 2, 'mba.webp', 'mba.webp', '', 1, NULL, '2021-03-09 20:17:52'),
+(7, 'Fxecrypto', 'https://www.ecryptosmart.com/', 'Desarrollo con laravel y 3web.js integración a blochain', 7, 'fxecrypto.webp', 'fxecrypto.webp', '', 1, NULL, NULL),
+(8, 'Transformate', 'https://transformatepro.com/', 'Plataforma E-Learning con Laravel y Uikit CSS', 7, 'transformate.webp', 'transformate.webp', '', 1, NULL, '2021-03-09 20:23:08'),
+(9, 'Levelup', 'https://comunidadlevelup.com/', 'Sotfware Multinivel Con Laravel', 7, 'levelup.webp', 'levelup.webp', '', 1, NULL, '2021-03-09 20:23:35'),
+(10, 'Cruzatel', 'https://www.cruzatel.com/', 'Software Multinivel con Laravel e Integración a Coinpayments', 7, 'cruzatel.webp', 'cruzatel.webp', '', 1, NULL, '2021-03-09 20:24:30'),
+(11, 'Breve', 'https://breve.com.co/programardomicilio', 'Software para Deliverys, Laravel', 7, 'breve.webp', 'breve.webp', '', 1, NULL, '2021-03-09 20:24:59'),
+(12, 'Bananalegal', 'https://legalbananas.com/', 'Software para administración y firma de documentos por medio de blockchain', 7, 'banana_legal.webp', 'banana_legal.webp', '', 1, NULL, '2021-03-09 20:25:27'),
+(13, 'Brainbow', 'https://brainbow.capital/', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'brainbow.webp', 'brainbow.webp', '', 1, NULL, '2021-03-09 20:26:05'),
+(14, 'Universal Profits', 'https://universal-profits.com/mioficina/login', 'Software Multinivel con Laravel e integración a Coinpayments, control de inversiones', 9, 'universal_prfits.webp', 'universal_prfits.webp', '', 1, NULL, '2021-03-09 20:27:18'),
+(15, 'Unión Capital', 'https://mioficina.unioncapital.eu/', 'Software Multinivel con Laravel e integración a Coinpayments,', 7, 'union_capital.webp', 'union_capital.webp', '', 1, NULL, '2021-03-09 20:27:47'),
+(16, 'Royal green', 'https://royalgreen.company/mioficina/login', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'royal_green.webp', 'royal_green.webp', '', 1, NULL, '2021-03-09 20:28:17'),
+(17, 'Viral media', 'https://viralmediapanel.com/', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'viral-media.webp', 'viral-media.webp', '', 1, NULL, '2021-03-09 20:28:56'),
+(18, 'Emedusc', 'https://emeduc.org/sobre-nosotros/', 'LMS en Wordpress y Woocommerce', 7, 'emedusc.webp', 'emedusc.webp', '', 1, NULL, '2021-03-09 20:29:36'),
+(19, 'Calzado Garvi', 'https://www.behance.net/gallery/40896299/Garvi', 'Ecommerce de Zapatería realizado en Magento', 7, 'calzado_garvi.webp', 'calzado_garvi.webp', '', 1, NULL, '2021-03-09 20:30:13'),
+(20, 'Instituto Especial Colón', 'https://www.behance.net/gallery/31965983/Instituto-Especial-colon', 'Web informativa para instituto Especial', 7, 'instituto_color.webp', 'instituto_color.webp', '', 1, NULL, '2021-03-09 20:30:44'),
+(21, 'Enterprise', 'https://www.behance.net/gallery/36368447/Diseno-web-y-Sistema-php-para-Enterprice            Xkd', 'Sistema de Tranking en PHP', 7, 'enterprise.webp', 'enterprise.webp', '', 1, NULL, '2021-03-09 20:31:08'),
+(22, 'XKD', 'https://www.behance.net/gallery/37734099/Diseno-web-Xkd', 'Ecommerce con customizador de camisetas Wordpress', 7, 'xkd-enterprise2.webp', 'xkd-enterprise2.webp', '', 1, NULL, '2021-03-09 20:31:42'),
+(23, 'Alimac', 'https://www.behance.net/gallery/38189091/Alimac', 'Tienda de videojuegos en Prestashop', 7, 'alimac.webp', 'alimac.webp', '', 1, NULL, '2021-03-09 20:32:06'),
+(24, 'Magic travel', 'https://www.behance.net/gallery/109277841/Magic-Travel', 'Web Informativa realizada en Wordpress', 7, 'magic_travel.webp', 'magic_travel.webp', '', 1, NULL, '2021-03-09 20:32:32'),
+(25, 'Tinytu', 'https://www.behance.net/gallery/40897253/Tinytu', 'Ecommerce de títeres en Prestashop', 7, 'tinytu.webp', 'tinytu.webp', '', 1, NULL, '2021-03-09 20:32:56'),
+(26, 'Fittech', 'https://valdusoft.com/', 'App Móvil de entrenamiento y nutrición', 1, 'fittech.webp', 'fittech.webp', '', 1, NULL, '2021-03-09 20:19:06'),
+(27, 'Liso y liso', 'https://lisosylisos.co', 'Web Informativa realizada en Wordpress', 1, 'lisos_lisos.webp', 'lisos_lisos.webp', '', 1, NULL, '2021-03-09 20:19:48'),
+(28, 'Hs stone', 'https://www.hsstonegallery.com/', 'Catálogo realizado en Wordpress', 1, 'hs_stone.webp', 'hs_stone.webp', '', 1, NULL, '2021-03-09 20:20:20'),
+(31, 'Recomiendo', 'https://valdusoft.com/', 'App Movil de sitios y comidas', 1, 'recomiendo.webp', 'recomiendo.webp', '', 1, NULL, '2021-03-09 20:20:53'),
+(32, 'Bastian', 'https://valdusoft.com/', 'App Móvil de Captación', 1, 'bastian.webp', 'bastian.webp', '', 1, NULL, '2021-03-09 20:21:30'),
+(33, 'Dore The Golden Cake', 'https://dorethegoldencake.com/', 'Web Informativa realizada en Wordpress', 9, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:49:00', '2021-03-09 20:16:21'),
+(34, 'Lavanderia Universal', 'http://lavanderiauniversal.com/', 'Web Informativa realizada en Wordpress', 9, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:54:15', '2021-03-09 20:16:38'),
+(35, 'Sello de confianza', 'https://valdusoft.com/', 'Formulario y backoffice', 7, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:49:00', '2021-02-18 23:49:00'),
+(36, 'Dimelo', 'https://dimelo.vip/', 'Web de captación realizada en React.js', 1, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:49:00', '2021-02-18 23:49:00'),
+(37, 'GoldenBIT', 'http://goldenbit.company/', 'Software Multinivel con Laravel e integración a Coinpayments', 7, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:49:00', '2021-03-09 20:34:19'),
+(38, 'Trasendence', 'https://eventos.universal-profits.com/', 'Landing de captación con embudo de venta', 7, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:49:00', '2021-03-09 20:34:40'),
+(39, 'Wealht ocean', 'https://valdusoft.com/', 'Landing web informativa y backoffice', 7, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(40, 'FTX Live', 'http://ftxlive.com/office', 'Dsearrollo web en laravel y VueJs, con sistema de streaming', 2, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(41, 'Vitawel', 'https://valdusoft.com/', 'Dsearrollo web en laravel y Angular', 7, 'Logo-2.png', 'vitawel.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(42, 'Tienda Impaz', 'https://valdusoft.com', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'impaz.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(43, 'Merciad', 'https://valdusoft.com/', 'Desarrollo web en laravel', 7, 'Logo-2.png', 'merciad.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(44, 'TecnoBox Store', 'https://valdusoft.com', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'tecnobox.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(45, 'Tecno Pug', 'https://valdusoft.com', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'tecnopug.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(47, 'Alma Coach', 'https://amacoach.com/', 'Web de membresías en Wordpress', 3, 'alma_coach.webp', 'alma_coach.webp', '', 1, NULL, '2021-03-09 20:09:45'),
+(48, 'America del Sur', 'https://amacoach.com/', 'Ecommerce con Magento de moda', 3, 'america_del_sur.webp', 'america_del_sur.webp', '', 1, NULL, NULL),
+(49, 'Chineko', 'https://chineko.com.ar/', 'Ecommerce de cholas con Wordpress', 3, 'chineko.webp', 'chineko.webp', '', 1, NULL, NULL),
+(50, 'Dino Butelli', 'https://dinobutelli.com.ar/', 'Ecommerce de calzado con Wordpress', 3, 'dino_butelli.webp', 'dino_butelli.webp', '', 1, NULL, NULL),
+(51, 'Zumik', 'https://pintureriaszumik.com.ar/', 'Catalogo realizada en Wordpress', 3, 'szumik.webp', 'szumik.webp', '', 1, NULL, '2021-03-09 20:12:56'),
+(52, 'Zetla', 'https://zetla.com.ar/', 'Desarrollo landing pixel perfect', 3, 'zetla.webp', 'zetla.webp', '', 1, NULL, NULL),
+(53, 'Fullpowermoto', 'https://fullpowermoto.com/', 'Ecommerce con Wordpress', 7, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:49:00', '2021-02-18 23:49:00'),
+(54, 'Zona Inmobiliaria', 'https://valdusoft.com', 'Venta de inmuebles en wordpres', 3, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-02-18 23:54:15', '2021-02-18 23:54:15'),
+(55, 'Pawsitivebox', 'http://pawsitivebox.com/', 'Ecommerce con Wordpress', 9, 'Logo-2.png', 'Logo-1.webp', '', 1, '2021-03-09 16:38:02', '2021-03-09 20:32:06');
 
 -- --------------------------------------------------------
 
@@ -804,19 +805,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de la tabla `projects_tags`
 --
 ALTER TABLE `projects_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT de la tabla `projects_technologies`
 --
 ALTER TABLE `projects_technologies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
