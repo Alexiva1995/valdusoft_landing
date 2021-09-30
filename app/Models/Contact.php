@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     protected $fillable = [
-        'name', 'email', 'phone','subject', 'message', 'g-recaptcha-response'
+        'name', 'email', 'phone','subject', 'message'
     ];
 
 }

@@ -16,9 +16,24 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'last_name',
+        'slug',
+        'email',
+        'phone',
+        'birthdate',
+        'admission_date',
+        'password',
+        'position',
+        'curriculum',
+        'price_per_hour',
+        'uphold_account',
+        'tron_wallet',
+        'profile_id',
+        'photo',
+        'logo',
+        'ally_name'
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,4 +51,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     //Relación del cliente con sus proyectos
+     public function projects(){
+        return $this->hasMany('App\Models\Project');
+    }
 }

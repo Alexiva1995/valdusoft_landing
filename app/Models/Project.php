@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = [
-        'name', 'link', 'description', 'ally_id', 'ally_imag', 'porta_image', 'image', 'status'
+        'name', 'start_date', 'user_id', 'slug', 'ending_date', 'link', 'description', 'logo', 'circular_logo', 'country_id', 'type', 'status', 'visible_landing'
     ];
 
-    public function ally(){
-        return $this->belongsTo('App\Models\Ally');
+    public function user(){
+        return $this->belongsTo('App\Models\User');
     }
     public function tags(){
         return $this->belongsToMany('App\Models\Tag', 'projects_tags', 'project_id', 'tag_id');
