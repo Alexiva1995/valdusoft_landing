@@ -141,7 +141,7 @@ class HomeController extends Controller
                         ->withCount('tags', 'technologies')
                         ->first();    
         
-        return view('showProjectmodal')->with(compact('project'));
+        return view('showProjectModalContent')->with(compact('project'));
     }
 
     public function contactUs(Request $request){

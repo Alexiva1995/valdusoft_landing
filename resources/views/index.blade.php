@@ -35,8 +35,8 @@
         }
 
         function loadMoreProjects(){
-            var route = 'http://localhost:8000/load-more-projects';
-            //var route = 'https://valdusoft.com/load-more-projects';
+            //var route = 'http://localhost:8000/load-more-projects';
+            var route = 'https://valdusoft.com/load-more-projects';
             var formData = new FormData(document.getElementById("form_data_projects"));
             $.ajax({
                 headers: {
@@ -58,19 +58,18 @@
                 }
             });
         }
-    
-        function showProject(id){
-            var route = 'http://localhost:8000/show-project/'+id;
-            //var route = 'https://valdusoft.com/show-project/'+id;
 
+        function showProjectDetails($project_id){
+            var route = 'http://localhost:8000/show-project/'+$project_id;
             $.ajax({
                 url: route,
                 type: "GET",
-                success:function(response){
-                    $('#show-project-content').html(response);
-                    $('#showProject').modal('show');
+                success:function(ans){
+                   /*  console.log(ans);*/
+                   $("#modal-body-show-project").html(ans);
                 }
             });
+            $('#show-project-modal').modal('show');
         }
     </script>
 @endpush
@@ -183,7 +182,7 @@
                 @foreach($projects as $project)
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 our-works-card" style="background: url('https://clients.valdusoft.com/uploads/images/projects/{{$project->logo}}');
                         background-color: #3bbce8; background-size: cover;">
-                        <div class="overlay" onclick="showProject({{$project->id}});">
+                        <div class="overlay" onclick="showProjectDetails({{ $project->id }});">
                             <div class="our-works-company-logo">
                                 <img class="rounded-circle" src="{{ asset('https://clients.valdusoft.com/uploads/images/users/logos/'.$project->user->logo) }}">
                             </div>
@@ -331,20 +330,19 @@
         </div>
     </div>
 
-    {{-- Modal para ver detalles del proyecto --}}
-    <div class="modal fade" id="showProject" tabindex="-1" role="dialog" aria-modal="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-primary white">
-                    <h5 class="modal-title">Detalles del Proyecto</h5>
+    {{-- Modal de Detalles del Proyecto --}}
+    <div class="modal" tabindex="-1" id="show-project-modal">
+        <div class="modal-dialog modal-show-project">
+            <div class="modal-content modal-content-show-project">
+                <div class="modal-header modal-header-show-project">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true" class="text-white">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" id="show-project-content">
+                <div class="modal-body" id="modal-body-show-project">
                     
                 </div>
             </div>
         </div>
-    </div>
+      </div>
 @endsection

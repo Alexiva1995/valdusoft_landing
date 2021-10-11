@@ -10,7 +10,7 @@
     @foreach($projects as $project)
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 our-works-card" style="background: url('https://clients.valdusoft.com/uploads/images/projects/{{$project->logo}}');
             background-color: #3bbce8; background-size: cover;">
-            <div class="overlay" data-target="#image-modal" data-toggle="modal" onclick="showProject(1);">
+            <div class="overlay" onclick="showProjectDetails({{ $project->id }});">
                 <div class="our-works-company-logo">
                     <img class="rounded-circle" src="{{ asset('https://clients.valdusoft.com/uploads/images/users/logos/'.$project->user->logo) }}">
                 </div>

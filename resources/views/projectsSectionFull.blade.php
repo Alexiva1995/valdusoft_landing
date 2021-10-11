@@ -1,19 +1,19 @@
-<div class="ml-5 pl-5 mt-5 pb-4">
+<div class="mt-5 pb-4">
     <div class="our-works-title">Portafolio</div>
 
-    <div class="row ml-4">
-        <div class="col-6">
+    <div class="row our-works-subtitle">
+        <div class="col-xl-6 col-lg-6 col-md-4 col-12">
             <h3>Este es nuestro trabajo</h3>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-xl-6 col-lg-6 col-md-8 col-12 our-works-menu">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link @if ($tag_id == 0) active @endif our-works-menu-link" href="javascript:;" id="0" onclick="loadNewTab(this.id);">Todos</a>
+                    <a class="nav-link active our-works-menu-link" href="javascript:;" id="0" onclick="loadNewTab(this.id);">Todos</a>
                 </li>
                 
                 @foreach ($tags as $tag)
                     <li class="nav-item">
-                        <a class="nav-link our-works-menu-link @if ($tag_id == $tag->id) active @endif"  href="javascript:;" id="{{$tag->id}}" onclick="loadNewTab(this.id);">{{$tag->name}}</a>
+                        <a class="nav-link our-works-menu-link"  href="javascript:;" id="{{$tag->id}}" onclick="loadNewTab(this.id);">{{$tag->name}}</a>
                     </li>
                 @endforeach
             </ul>
@@ -21,7 +21,7 @@
     </div>
 </div>
 
-<div class="pb-5">
+<div class="pb-5" id="projects_section">
     <form id="form_data_projects">
         <input type="hidden" id="meta_token" value="{{ csrf_token() }}">
         <input type="hidden" name="projects" id="projects" value="{{ json_encode($projects) }}">
@@ -30,11 +30,11 @@
         <input type="hidden" name="cantProjects" id="cantProjects" value="{{ $cantProjects }}">
         <input type="hidden" name="tag_id" id="tag_id" value="{{ $tag_id }}">
     </form>
-    <div class="row" style="margin-left: 0px;">
+    <div class="row" style="margin-left: 0px;" >
         @foreach($projects as $project)
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 our-works-card" style="background: url('https://clients.valdusoft.com/uploads/images/projects/{{$project->logo}}');
                 background-color: #3bbce8; background-size: cover;">
-                <div class="overlay" data-target="#image-modal" data-toggle="modal" onclick="showProject(1);">
+                <div class="overlay" onclick="showProjectDetails({{ $project->id }});">
                     <div class="our-works-company-logo">
                         <img class="rounded-circle" src="{{ asset('https://clients.valdusoft.com/uploads/images/users/logos/'.$project->user->logo) }}">
                     </div>
