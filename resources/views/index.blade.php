@@ -11,8 +11,8 @@
         }
         
         function loadNewTab($tag_id){
-            var route = 'http://localhost:8000/load-new-tab/'+$tag_id;
-            //var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
+            //var route = 'http://localhost:8000/load-new-tab/'+$tag_id;
+            var route = 'https://valdusoft.com/load-new-tab/'+$tag_id;
             $.ajax({
                 url: route,
                 type: "GET",
@@ -60,7 +60,8 @@
         }
 
         function showProjectDetails($project_id){
-            var route = 'http://localhost:8000/show-project/'+$project_id;
+            //var route = 'http://localhost:8000/show-project/'+$project_id;
+            var route = 'https://valdusoft.com/show-project/'+$project_id;
             $.ajax({
                 url: route,
                 type: "GET",
@@ -85,59 +86,48 @@
                 <img src="{{asset('assets/images/website-design.svg')}}" alt="">
                 <h4 class="text-gray-dark">Diseño Web</h4>
                 <p class="text-center our-services-box-text">
-                    El diseño web no solo engloba como se vera tu web también es la planificación de la estructura
-                    con la cual vas a trasmitir la esencia de tu web al usuario. Permitiendo presentar de manera
-                    maravillosa tu idea a los potenciales cliente En un Área que debe tener total armonía con tu
-                    marca. Somos capaces de ofrecerte una revolución visual que permita captar la atención de los
-                    visitantes de manera correcta.
+                    No solo es como se ve tu web, es la planificación de la estructura con la que vas a transmitir tu esencia como marca al usuario. 
+                    Permitiendo presentar de manera clara tu idea a potenciales clientes. Te ofrecemos un impacto visual que permita captar la atención de los visitantes.
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
                 <img src="{{asset('assets/images/mobile-app.svg')}}" alt="">
                 <h4 class="text-gray-dark">Desarrollo de Apps</h4>
                 <p class="text-center our-services-box-text">
-                    Desarrollamos Tu Aplicación móvil a medida atendiendo tus necesidades, ofreciendo soluciones de
-                    calidad que permita llevar a acabo tu propuesta o idea de negocio a las tiendas de app store y
-                    play store. Actualmente EL mayor trafico que tienen las empresas provienen de sus aplicaciones
-                    móviles. Una gran app es una vitrina impresionante para tu negocio.
+                    Tenemos soluciones de calidad que permiten llevar a cabo tu propuesta o idea de negocio a las tiendas (appstore y play store). 
+                    Actualmente el mayor tráfico que tienen las empresas proviene de sus aplicaciones móviles. 
+                    Una gran app es una vitrina en la palma de la mano para interactuar con el público. Desarrollamos tu aplicación móvil a medida.
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
                 <img src="{{asset('assets/images/web-debelopment.svg')}}" alt="">
                 <h4 class="text-gray-dark">Desarrollo Web</h4>
                 <p class="text-center our-services-box-text">
-                    Desarrollo web Nos permite Desarrollar una herramienta para tu negocio o empresa que optimice
-                    todos los procesos tomando en cuneta tus necesidades, usamos los estándares mas actuales para
-                    hacer tu aplicación web garantizando una funcionalidad optima y ser escalable que te permita
-                    siempre estar en constante mejora.
+                    Es una herramienta para tu emprendimiento de simplificar por medio de la web procesos para mejorar la productividad y control. 
+                    Nos basamos en los estándares más actuales para hacer tu aplicación web, garantizando una funcionalidad óptima y a su vez una app escalable que te permita siempre estar en constante mejora.
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
                 <img src="{{asset('assets/images/Page-1.svg')}}" alt="">
                 <h4 class="text-gray-dark">UX / UI</h4>
                 <p class="text-center our-services-box-text">
-                    Tu plataforma siempre tiene que estar orientado a los usuarios y a su usabilidad no podemos
-                    tener solo un diseño bonito se debe realizar un diseño que sea capaz de convertir un lead en un
-                    cliente, siempre pensando en que la plataforma sea totalmente fácil de usar para tener la mayor
-                    interacción Aplicando estrategias posiciones y de llamadas a ala acción
+                    Tu plataforma siempre tiene que estar orientada a la usabilidad por parte del usuario no se debe solo proporcionar un diseño bonito el mismo debe estar orientado a convertir un lead en un cliente para proporcionar que la plataforma sea manejable e intuitiva que logre obtener la interacción del usuario. 
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
                 <img src="{{asset('assets/images/database-server.svg')}}" alt="">
                 <h4 class="text-gray-dark">Hosting</h4>
                 <p class="text-center our-services-box-text">
-                    Ofrecemos la mejor calidad de servidores a tu disposición donde tiene un soporte 24/7 red
-                    directa con el datacenter de Canadá. Soluciones para webs, blogs, intranet servidores para
-                    streaming. Los planes con los mejores precios del mercado
+                    Ofrecemos la mejor calidad de servidores a tu disposición con un soporte 24/7(data center Canadá). 
+                    Ofrecemos soluciones para webs, blogs, intranet y servidores para streaming.
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
                 <img src="{{asset('assets/images/ribbon-design.svg')}}" alt="">
                 <h4 class="text-gray-dark">Diseño Gráfico</h4>
                 <p class="text-center our-services-box-text">
-                    Es importante que tu marca tenga una esencia se genere el branding adecuado, que permita a los
-                    clientes siempre reconocer tu marca, las imágenes deben hacerse con un propósito con un diseño
-                    adecuado que permita trasmitir lo que somos y donde queremos llegar.
+                    Es Importante que toda marca tenga una esencia que se genere por el branding adecuado, permitiendo a los usuarios siempre reconocer la marca. 
+                    Todas las imágenes deben hacerse con un propósito y diseño adecuado que permita trasmitir lo que somos y dónde queremos llegar.
                 </p>
             </div>
         </div>
@@ -235,7 +225,7 @@
                                 </div>
                                 <div class="col-md-10 text-left" style="padding-left: 10px; padding-right: 0px;">
                                     <b>Teléfono</b> 
-                                    <div>+58 (426) 931-57-24</div>
+                                    <div><a class="text-white" href="https://api.whatsapp.com/send?phone=584269315724" target="_blank">+58 (426) 931-57-24</a></div>
                                 </div>
                             </div>
                         </li>
@@ -246,7 +236,7 @@
                                 </div>
                                 <div class="col-md-10 text-left contact-section-icon" style="padding-left: 10px; padding-right: 0px;">
                                     <b>Email</b> 
-                                    <div>info@valdusoft.com</div>
+                                    <div><a class="text-white" href="mailto:info@valdusoft.com" target="_blank">info@valdusoft.com</a></div>
                                 </div>
                             </div>
                         </li>

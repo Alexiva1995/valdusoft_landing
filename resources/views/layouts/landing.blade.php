@@ -20,12 +20,19 @@
         {{-- Fin Header --}}
 
         @if (Session::has('success'))
-            <div class="ui container success message">
-                <i class="close icon"></i>
-                <div class="header">
-                    ¡Mensaje Enviado!
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-2 col-12"></div>
+                <div class="col-xl-6 col-lg-6 col-md-8 col-12">
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="alert-heading">¡Mensaje Enviado!</h4>
+                        <hr>
+                        <p>Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarnos!</p>
+                    </div>
                 </div>
-                <p>Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarnos!</p>
+                <div class="col-xl-3 col-lg-3 col-md-2 col-12"></div>
             </div>
         @endif
 
