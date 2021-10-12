@@ -63,6 +63,7 @@
     {{--<script src="{{ asset('assets/js/jquery-3.5.1.slim.min.js') }}"></script>--}}
     <script src="{{ asset('assets/js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap-4.6.0/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
     {{-- Recatcha --}}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     

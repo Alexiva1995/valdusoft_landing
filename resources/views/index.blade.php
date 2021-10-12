@@ -3,6 +3,8 @@
 
 @push('scripts')
     <script>
+        LL = new LazyLoad();
+
         function moveSection($section){
             $('html,body').animate({
                 scrollTop: $($section).offset().top
@@ -83,7 +85,7 @@
 
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
-                <img src="{{asset('assets/images/website-design.svg')}}" alt="">
+                <img class="lazy" src="{{asset('assets/images/website-design.svg')}}" alt="">
                 <h4 class="text-gray-dark">Diseño Web</h4>
                 <p class="text-center our-services-box-text">
                     No solo es como se ve tu web, es la planificación de la estructura con la que vas a transmitir tu esencia como marca al usuario. 
@@ -91,7 +93,7 @@
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
-                <img src="{{asset('assets/images/mobile-app.svg')}}" alt="">
+                <img class="lazy" src="{{asset('assets/images/mobile-app.svg')}}" alt="">
                 <h4 class="text-gray-dark">Desarrollo de Apps</h4>
                 <p class="text-center our-services-box-text">
                     Tenemos soluciones de calidad que permiten llevar a cabo tu propuesta o idea de negocio a las tiendas (appstore y play store). 
@@ -100,7 +102,7 @@
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
-                <img src="{{asset('assets/images/web-debelopment.svg')}}" alt="">
+                <img class="lazy" src="{{asset('assets/images/web-debelopment.svg')}}" alt="">
                 <h4 class="text-gray-dark">Desarrollo Web</h4>
                 <p class="text-center our-services-box-text">
                     Es una herramienta para tu emprendimiento de simplificar por medio de la web procesos para mejorar la productividad y control. 
@@ -108,14 +110,14 @@
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
-                <img src="{{asset('assets/images/Page-1.svg')}}" alt="">
+                <img class="lazy" src="{{asset('assets/images/Page-1.svg')}}" alt="">
                 <h4 class="text-gray-dark">UX / UI</h4>
                 <p class="text-center our-services-box-text">
                     Tu plataforma siempre tiene que estar orientada a la usabilidad por parte del usuario no se debe solo proporcionar un diseño bonito el mismo debe estar orientado a convertir un lead en un cliente para proporcionar que la plataforma sea manejable e intuitiva que logre obtener la interacción del usuario. 
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
-                <img src="{{asset('assets/images/database-server.svg')}}" alt="">
+                <img class="lazy" src="{{asset('assets/images/database-server.svg')}}" alt="">
                 <h4 class="text-gray-dark">Hosting</h4>
                 <p class="text-center our-services-box-text">
                     Ofrecemos la mejor calidad de servidores a tu disposición con un soporte 24/7(data center Canadá). 
@@ -123,7 +125,7 @@
                 </p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 p-3 our-services-box">
-                <img src="{{asset('assets/images/ribbon-design.svg')}}" alt="">
+                <img class="lazy" src="{{asset('assets/images/ribbon-design.svg')}}" alt="">
                 <h4 class="text-gray-dark">Diseño Gráfico</h4>
                 <p class="text-center our-services-box-text">
                     Es Importante que toda marca tenga una esencia que se genere por el branding adecuado, permitiendo a los usuarios siempre reconocer la marca. 
@@ -170,8 +172,7 @@
             </form>
             <div class="row" style="margin-left: 0px;" >
                 @foreach($projects as $project)
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 our-works-card" style="background: url('https://clients.valdusoft.com/uploads/images/projects/{{$project->logo}}');
-                        background-color: #3bbce8; background-size: cover;">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 our-works-card lazy" data-bg="https://clients.valdusoft.com/uploads/images/projects/{{$project->logo}}" style="background-color: #3bbce8; background-size: cover;">
                         <div class="overlay" onclick="showProjectDetails({{ $project->id }});">
                             <div class="our-works-company-logo">
                                 <img class="rounded-circle" src="{{ asset('https://clients.valdusoft.com/uploads/images/users/logos/'.$project->user->logo) }}">
@@ -220,34 +221,28 @@
                     <ul class="list-group contact-section-list">
                         <li class="list-group-item">
                             <div class="row">
-                                <div class="col-md-2 text-right" style="padding-left: 0px; padding-right: 0px;">
+                                <div class="col-12 text-left" style="padding-left: 20px; padding-right: 0px;">
                                     <img src="{{ asset('assets/bootstrap-icons-1.5.0/telephone.svg') }}" alt="">
-                                </div>
-                                <div class="col-md-10 text-left" style="padding-left: 10px; padding-right: 0px;">
-                                    <b>Teléfono</b> 
-                                    <div><a class="text-white" href="https://api.whatsapp.com/send?phone=584269315724" target="_blank">+58 (426) 931-57-24</a></div>
+                                    <b class="ml-2">Teléfono</b> 
+                                    <div class="ml-4"><a class="text-white" href="https://api.whatsapp.com/send?phone=584269315724" target="_blank">+58 (426) 931-57-24</a></div>
                                 </div>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="row">
-                                <div class="col-md-2 text-right contact-section-icon" style="padding-left: 0px; padding-right: 0px;">
+                                <div class="col-12 text-left" style="padding-left: 20px; padding-right: 0px;">
                                     <img src="{{ asset('assets/bootstrap-icons-1.5.0/envelope.svg') }}" alt="">
-                                </div>
-                                <div class="col-md-10 text-left contact-section-icon" style="padding-left: 10px; padding-right: 0px;">
-                                    <b>Email</b> 
-                                    <div><a class="text-white" href="mailto:info@valdusoft.com" target="_blank">info@valdusoft.com</a></div>
+                                    <b class="ml-2">Email</b> 
+                                    <div class="ml-4"><a class="text-white" href="mailto:info@valdusoft.com" target="_blank">info@valdusoft.com</a></div>
                                 </div>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="row">
-                                <div class="col-md-2 text-right contact-section-icon" style="padding-left: 0px; padding-right: 0px;">
+                                <div class="col-12 text-left" style="padding-left: 20px; padding-right: 0px;">
                                     <img src="{{ asset('assets/bootstrap-icons-1.5.0/geo-alt.svg') }}" alt="">
-                                </div>
-                                <div class="col-md-10 text-left contact-section-icon" style="padding-left: 10px; padding-right: 0px;">
-                                    <b>Dirección</b> 
-                                    <div>San Cristóbal - Edo. Táchira Venezuela</div>
+                                    <b class="ml-2">Dirección</b> 
+                                    <div class="ml-4">San Cristóbal - Edo. Táchira Venezuela</div>
                                 </div>
                             </div>
                         </li>
