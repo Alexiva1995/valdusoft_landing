@@ -52,14 +52,6 @@
 
     @yield('content')
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR15V5XTK6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-YR15V5XTK6');
-	</script>
-
     {{--<script src="{{ asset('assets/js/jquery-3.5.1.slim.min.js') }}"></script>--}}
     <script src="{{ asset('assets/js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap-4.6.0/js/bootstrap.bundle.min.js') }}"></script>
